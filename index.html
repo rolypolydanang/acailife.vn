@@ -22,7 +22,7 @@ body{
 }
 
 /* ==========================
-   TOP SCROLLER
+   TICKER
 ========================== */
 
 .ticker{
@@ -56,84 +56,37 @@ body{
     padding-right:60px;
 }
 
-/* animation */
 @keyframes marquee{
     from{ transform:translateX(0); }
     to{ transform:translateX(-50%); }
 }
 
 /* ==========================
-   HERO
+   HERO (IMPORTANT FIX)
 ========================== */
 
 .hero{
-    padding-top:60px;
+    margin-top:60px;        /* EXACT spacing under ticker */
+    min-height:calc(100vh - 60px);
     display:flex;
     justify-content:center;
-    align-items:flex-start;
-    min-height:100vh;
+    align-items:flex-start; /* ALWAYS TOP ALIGN */
     background:#111;
 }
 
+/* DESKTOP */
 .hero-logo{
-    width:min(1400px, 95vw); /* DOUBLE SIZE + responsive safe */
+    width:100vw;
     height:auto;
+    display:block;
 }
 
-</style>
-
-</head>
-
-<body>
-
-<!-- TICKER -->
-<div class="ticker">
-    <div class="ticker-track">
-
-        <span>AUTHENTIC BRAZILIAN AÇAÍ</span>
-        <span>TRADITIONAL FROZEN YOGURT</span>
-        <span>PREMIUM TOPPINGS</span>
-        <span>ENERGISING SMOOTHIES</span>
-        <span>SPECIALTY COFFEE</span>
-
-        <span>AUTHENTIC BRAZILIAN AÇAÍ</span>
-        <span>TRADITIONAL FROZEN YOGURT</span>
-        <span>PREMIUM TOPPINGS</span>
-        <span>ENERGISING SMOOTHIES</span>
-        <span>SPECIALTY COFFEE</span>
-
-    </div>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-
-    <img src="/images/acai-life-logo-long.webp"
-         alt="Acai Life"
-         class="hero-logo">
-
-</section>
-
-</body>
-</html>
-/* ==========================
-   HERO (FIXED LAYOUT)
-========================== */
-
-.hero{
-    padding-top:60px;   /* THIS creates exact space under ticker */
-    display:flex;
-    justify-content:center;
-    align-items:flex-start; /* IMPORTANT: no vertical centering */
-    min-height:100vh;
-    background:#111;
-}
-
-.hero-logo{
-    width:700px;
-    max-width:85%;
-    height:auto;
-    margin-top:0;
+/* MOBILE */
+@media (max-width: 768px){
+    .hero-logo{
+        height:80vh;
+        width:auto;
+    }
 }
 
 </style>
