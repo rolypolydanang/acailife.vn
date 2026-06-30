@@ -22,7 +22,7 @@ body{
 }
 
 /* ==========================
-   TOP SCROLLING BAR
+   TOP TICKER
 ========================== */
 
 .ticker{
@@ -56,32 +56,26 @@ body{
     padding-right:60px;
 }
 
-/* no hover pause */
-
-/* ==========================
-   ANIMATION
-========================== */
-
+/* animation */
 @keyframes marquee{
-    from{
-        transform:translateX(0);
-    }
-    to{
-        transform:translateX(-50%);
-    }
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
 }
 
 /* ==========================
-   HERO
+   HERO (KEY FIX HERE)
 ========================== */
 
 .hero{
-    min-height:calc(100vh - 60px); /* KEY FIX */
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     background:#111;
-    margin-top:60px; /* ensures starts right under ticker */
+
+    /* IMPORTANT: remove ALL offsets */
+    padding-top:0;
+    margin-top:0;
 }
 
 .hero-logo{
@@ -96,7 +90,7 @@ body{
 
 <body>
 
-<!-- TOP TICKER -->
+<!-- TICKER -->
 <div class="ticker">
     <div class="ticker-track">
 
