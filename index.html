@@ -82,26 +82,19 @@ body{
     display:block;
 }
 
-/* MOBILE FIX (clean, no distortion) */
+/* MOBILE FIX — clean 3× visual scale */
 @media (max-width:768px){
 
     .hero{
         padding-top:10px;
-        align-items:flex-start;
     }
 
     .hero-logo{
-        width:300%;     /* 3× scale effect */
-        max-width:none; /* allow expansion */
+        width:100%;
         height:auto;
-        display:block;
-        margin-left:50%;
-        transform:translateX(-50%);
+        transform:scale(1.8);
+        transform-origin:center top;
     }
-
-}
-
-}
 
 }
 
@@ -232,7 +225,7 @@ body{
 
 <body>
 
-<!-- TOP TICKER -->
+<!-- TICKER -->
 <div class="ticker">
     <div class="ticker-track">
 
