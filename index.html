@@ -82,17 +82,14 @@ body{
     display:block;
 }
 
+/* MOBILE FIX (clean, no distortion) */
 @media (max-width:768px){
 
     .hero-logo{
         width:100%;
         height:auto;
-        max-height:80vh;
-        object-fit:contain;
         display:block;
     }
-
-}
 
 }
 
@@ -128,7 +125,7 @@ body{
 .footer-nav a{
     color:#000;
     text-decoration:none;
-    font-size:42px;   /* 3× larger */
+    font-size:42px;
     font-weight:700;
     letter-spacing:1px;
     line-height:1.1;
@@ -156,7 +153,7 @@ body{
 .footer-social{
     display:flex;
     justify-content:flex-start;
-    gap:60px;          /* more space between icons */
+    gap:60px;
     margin-top:50px;
     flex-wrap:wrap;
 }
@@ -204,16 +201,16 @@ body{
         gap:22px;
     }
 
-.footer-social a{
-    color:#000;
-    font-size:60px;   /* was 28px → now 3× larger */
-    transition:.2s;
-}
+    .footer-social a{
+        color:#000;
+        font-size:60px;
+        transition:.2s;
+    }
 
-.footer-social a:hover{
-    transform:translateY(-3px);
-    opacity:.6;
-}
+    .footer-social a:hover{
+        transform:translateY(-3px);
+        opacity:.6;
+    }
 
 }
 
@@ -224,9 +221,7 @@ body{
 <body>
 
 <!-- TOP TICKER -->
-
 <div class="ticker">
-
     <div class="ticker-track">
 
         <span>AUTHENTIC BRAZILIAN AÇAÍ</span>
@@ -242,11 +237,9 @@ body{
         <span>SPECIALTY COFFEE</span>
 
     </div>
-
 </div>
 
 <!-- HERO -->
-
 <section class="hero">
 
     <img src="/images/acai-life-index-image.webp"
@@ -256,7 +249,6 @@ body{
 </section>
 
 <!-- FOOTER -->
-
 <footer class="footer">
 
     <div class="footer-inner">
@@ -287,29 +279,17 @@ body{
 
         <div class="footer-social">
 
-            <a href="#" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-
-            <a href="#" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-
-            <a href="#" aria-label="TikTok">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-
-            <a href="#" aria-label="Google Maps">
-                <i class="fa-solid fa-location-dot"></i>
-            </a>
-
-            <a href="#" aria-label="Tripadvisor">
-                <i class="fa-brands fa-tripadvisor"></i>
-            </a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+            <a href="#"><i class="fa-brands fa-tripadvisor"></i></a>
 
         </div>
 
-      
+        <div class="footer-copy">
+            © 2026 ACAI LIFE. ALL RIGHTS RESERVED.
+        </div>
 
     </div>
 
