@@ -87,6 +87,8 @@ body{
 
     .hero{
         padding-top:10px;
+        align-items:flex-start;
+        overflow:hidden; /* prevents scroll bugs */
     }
 
     .hero-logo{
@@ -94,6 +96,11 @@ body{
         height:auto;
         transform:scale(1.8);
         transform-origin:center top;
+        display:block;
+    }
+
+    body{
+        overflow-x:hidden; /* safety lock */
     }
 
 }
