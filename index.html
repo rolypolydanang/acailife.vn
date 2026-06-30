@@ -88,19 +88,15 @@ body{
     .hero{
         padding-top:10px;
         align-items:flex-start;
-        overflow:hidden; /* prevents scroll bugs */
+        min-height:auto;
     }
 
     .hero-logo{
         width:100%;
         height:auto;
-        transform:scale(1.8);
-        transform-origin:center top;
+        max-height:85vh;   /* keeps it large but fully visible */
+        object-fit:contain;
         display:block;
-    }
-
-    body{
-        overflow-x:hidden; /* safety lock */
     }
 
 }
