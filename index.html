@@ -17,8 +17,7 @@
 }
 
 html, body{
-    overflow-x:hidden;
-    max-width:100%;
+    overflow-x:hidden;   /* keep scroll lock */
 }
 
 body{
@@ -28,14 +27,14 @@ body{
 }
 
 /* ==========================
-   TICKER
+   TICKER (FIXED)
 ========================== */
 
 .ticker{
     position:fixed;
     top:0;
     left:0;
-    width:100%;
+    width:100vw; /* FIX */
     height:60px;
     background:#000;
     overflow:hidden;
@@ -49,8 +48,9 @@ body{
 .ticker-track{
     display:flex;
     width:max-content;
+    white-space:nowrap;      /* FIX */
+    will-change:transform;   /* smooth animation */
     animation:marquee 17.5s linear infinite;
-    overflow:hidden;
 }
 
 .ticker-track span{
@@ -108,7 +108,7 @@ body{
 .footer-top{
     display:flex;
     align-items:flex-start;
-    justify-content:space-between; /* 🔥 key fix */
+    justify-content:space-between;
     width:100%;
 }
 
