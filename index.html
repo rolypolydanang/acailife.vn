@@ -86,15 +86,20 @@ body{
 @media (max-width:768px){
 
     .hero{
+        padding-top:10px;
         align-items:flex-start;
     }
 
     .hero-logo{
-        height:240vh;   /* ~3× larger visual impact */
-        width:auto;
-        max-width:100%;
+        width:300%;     /* 3× scale effect */
+        max-width:none; /* allow expansion */
+        height:auto;
         display:block;
+        margin-left:50%;
+        transform:translateX(-50%);
     }
+
+}
 
 }
 
