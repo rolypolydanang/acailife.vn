@@ -6,6 +6,9 @@
 
 <title>Acai Life</title>
 
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 <style>
 
 *{
@@ -22,7 +25,7 @@ body{
 }
 
 /* ==========================
-   TICKER
+   TOP TICKER
 ========================== */
 
 .ticker{
@@ -62,31 +65,152 @@ body{
 }
 
 /* ==========================
-   HERO (IMPORTANT FIX)
+   HERO
 ========================== */
 
 .hero{
-    margin-top:60px;        /* EXACT spacing under ticker */
-    min-height:calc(100vh - 60px);
+    margin-top:60px;
     display:flex;
     justify-content:center;
-    align-items:flex-start; /* ALWAYS TOP ALIGN */
+    align-items:flex-start;
     background:#111;
 }
 
-/* DESKTOP */
 .hero-logo{
-    width:100vw;
+    width:100%;
     height:auto;
     display:block;
 }
 
-/* MOBILE */
-@media (max-width: 768px){
+@media (max-width:768px){
+
     .hero-logo{
-        height:80vh;
         width:auto;
+        height:80vh;
+        max-width:100%;
     }
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+    background:#fff;
+    color:#000;
+    border-top:2px solid #000;
+    padding:80px 40px;
+    text-align:left;
+    text-transform:uppercase;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.footer-inner{
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.footer-nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:35px;
+    margin-bottom:60px;
+}
+
+.footer-nav a{
+    color:#000;
+    text-decoration:none;
+    font-size:42px;   /* 3× larger */
+    font-weight:700;
+    letter-spacing:1px;
+    line-height:1.1;
+    transition:.2s;
+}
+
+.footer-nav a:hover{
+    opacity:.6;
+}
+
+.footer-info h2{
+    font-size:28px;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.footer-info p{
+    color:#000;
+    opacity:.75;
+    font-size:16px;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.footer-social{
+    display:flex;
+    justify-content:flex-start;
+    gap:60px;          /* more space between icons */
+    margin-top:50px;
+    flex-wrap:wrap;
+}
+
+.footer-social a{
+    color:#000;
+    font-size:28px;
+    transition:.2s;
+}
+
+.footer-social a:hover{
+    transform:translateY(-3px);
+    opacity:.6;
+}
+
+.footer-copy{
+    margin-top:60px;
+    color:#000;
+    opacity:.5;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+@media (max-width:768px){
+
+    .footer{
+        padding:60px 25px;
+    }
+
+    .footer-nav{
+        flex-direction:column;
+        gap:20px;
+        margin-bottom:45px;
+    }
+
+    .footer-info h2{
+        font-size:22px;
+    }
+
+    .footer-info p{
+        font-size:15px;
+    }
+
+    .footer-social{
+        gap:22px;
+    }
+
+.footer-social a{
+    color:#000;
+    font-size:60px;   /* was 28px → now 3× larger */
+    transition:.2s;
+}
+
+.footer-social a:hover{
+    transform:translateY(-3px);
+    opacity:.6;
+}
+
 }
 
 </style>
@@ -95,8 +219,10 @@ body{
 
 <body>
 
-<!-- TICKER -->
+<!-- TOP TICKER -->
+
 <div class="ticker">
+
     <div class="ticker-track">
 
         <span>AUTHENTIC BRAZILIAN AÇAÍ</span>
@@ -112,9 +238,11 @@ body{
         <span>SPECIALTY COFFEE</span>
 
     </div>
+
 </div>
 
 <!-- HERO -->
+
 <section class="hero">
 
     <img src="/images/acai-life-index-image.webp"
@@ -122,6 +250,66 @@ body{
          class="hero-logo">
 
 </section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-inner">
+
+        <nav class="footer-nav">
+            <a href="#">MENU</a>
+            <a href="#">ABOUT</a>
+            <a href="#">WHOLESALE</a>
+            <a href="#">CONTACT</a>
+            <a href="#">BLOG</a>
+        </nav>
+
+        <div class="footer-info">
+
+            <h2>ACAI LIFE - ACAI BOWLS & SMOOTHIES</h2>
+
+            <p>
+                05 AN THƯỢNG 6, BẮC MỸ PHÚ,<br>
+                NGŨ HÀNH SƠN, ĐÀ NẴNG 550000
+            </p>
+
+            <p>
+                +84 394 303 001<br>
+                ACAILIFE.VN@GMAIL.COM
+            </p>
+
+        </div>
+
+        <div class="footer-social">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+            <a href="#" aria-label="Google Maps">
+                <i class="fa-solid fa-location-dot"></i>
+            </a>
+
+            <a href="#" aria-label="Tripadvisor">
+                <i class="fa-brands fa-tripadvisor"></i>
+            </a>
+
+        </div>
+
+      
+
+    </div>
+
+</footer>
 
 </body>
 </html>
