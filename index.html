@@ -80,13 +80,6 @@ body{
     display:block;
 }
 
-@media (max-width:768px){
-    .hero-logo{
-        transform:scale(1.8);
-        transform-origin:center top;
-    }
-}
-
 /* ==========================
    FOOTER
 ========================== */
@@ -106,7 +99,7 @@ body{
     margin:0 auto;
 }
 
-/* CRITICAL FIX: remove space-between control */
+/* layout */
 .footer-top{
     display:flex;
     align-items:flex-start;
@@ -132,16 +125,16 @@ body{
     opacity:.5;
 }
 
-/* RIGHT SIDE PUSHED FULLY RIGHT */
+/* RIGHT SIDE */
 .footer-right{
-    margin-left:auto; /* 🔥 KEY FIX (forces full right edge) */
+    margin-left:auto;
     display:flex;
     flex-direction:column;
     align-items:flex-end;
     gap:40px;
 }
 
-/* INFO */
+/* TEXT */
 .footer-info h2{
     font-size:28px;
     margin-bottom:25px;
@@ -172,7 +165,7 @@ body{
     transform:translateY(-3px);
 }
 
-/* FORCE ALL FOOTER TEXT BLACK */
+/* FORCE ALL BLACK */
 .footer,
 .footer *{
     color:#000 !important;
@@ -180,10 +173,20 @@ body{
 }
 
 /* ==========================
-   MOBILE
+   MOBILE FIX (IMPORTANT)
 ========================== */
 
 @media (max-width:768px){
+
+    .hero{
+        margin-top:60px;
+        padding-bottom:140px; /* 🔥 FIX: prevents overlap */
+    }
+
+    .hero-logo{
+        transform:scale(1.8);
+        transform-origin:center top;
+    }
 
     .footer-top{
         flex-direction:column;
