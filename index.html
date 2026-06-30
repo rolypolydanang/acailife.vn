@@ -19,7 +19,6 @@ body{
     background:#111;
     color:#fff;
     overflow-x:hidden;
-    padding-top:60px; /* space for fixed ticker */
 }
 
 /* ==========================
@@ -77,11 +76,12 @@ body{
 ========================== */
 
 .hero{
-    min-height:100vh;
+    min-height:calc(100vh - 60px); /* KEY FIX */
     display:flex;
     justify-content:center;
     align-items:center;
     background:#111;
+    margin-top:60px; /* ensures starts right under ticker */
 }
 
 .hero-logo{
