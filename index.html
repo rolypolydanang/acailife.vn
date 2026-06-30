@@ -19,6 +19,7 @@ body{
     background:#111;
     color:#fff;
     overflow-x:hidden;
+    padding-top:60px; /* space reserved for fixed ticker */
 }
 
 /* ==========================
@@ -56,18 +57,19 @@ body{
     padding-right:60px;
 }
 
-/* removed hover pause so it NEVER stops */
+/* no hover pause */
+
+/* ==========================
+   ANIMATION
+========================== */
 
 @keyframes marquee{
-
     from{
         transform:translateX(0);
     }
-
     to{
         transform:translateX(-50%);
     }
-
 }
 
 /* ==========================
@@ -75,12 +77,11 @@ body{
 ========================== */
 
 .hero{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     background:#111;
-    padding-top:60px;
 }
 
 .hero-logo{
@@ -95,6 +96,7 @@ body{
 
 <body>
 
+<!-- TOP TICKER -->
 <div class="ticker">
     <div class="ticker-track">
 
@@ -113,6 +115,7 @@ body{
     </div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
 
     <img src="/images/acai-life-logo-long.webp"
