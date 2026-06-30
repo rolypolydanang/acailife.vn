@@ -22,7 +22,7 @@ body{
 }
 
 /* ==========================
-   TOP TICKER
+   TOP SCROLLER
 ========================== */
 
 .ticker{
@@ -63,25 +63,23 @@ body{
 }
 
 /* ==========================
-   HERO (KEY FIX HERE)
+   HERO (FIXED LAYOUT)
 ========================== */
 
 .hero{
-    min-height:100vh;
+    padding-top:60px;   /* THIS creates exact space under ticker */
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start; /* IMPORTANT: no vertical centering */
+    min-height:100vh;
     background:#111;
-
-    /* IMPORTANT: remove ALL offsets */
-    padding-top:0;
-    margin-top:0;
 }
 
 .hero-logo{
     width:700px;
     max-width:85%;
     height:auto;
+    margin-top:0;
 }
 
 </style>
