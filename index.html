@@ -99,7 +99,6 @@ body{
     margin:0 auto;
 }
 
-/* layout */
 .footer-top{
     display:flex;
     align-items:flex-start;
@@ -165,7 +164,7 @@ body{
     transform:translateY(-3px);
 }
 
-/* FORCE ALL BLACK */
+/* FORCE ALL FOOTER TEXT BLACK */
 .footer,
 .footer *{
     color:#000 !important;
@@ -173,14 +172,14 @@ body{
 }
 
 /* ==========================
-   MOBILE FIX (IMPORTANT)
+   MOBILE FIX (OVERFLOW SOLVED)
 ========================== */
 
 @media (max-width:768px){
 
     .hero{
         margin-top:60px;
-        padding-bottom:140px; /* 🔥 FIX: prevents overlap */
+        padding-bottom:140px;
     }
 
     .hero-logo{
@@ -203,8 +202,16 @@ body{
         text-align:left;
     }
 
+    /* FIX OVERFLOW */
+    .footer-social{
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        gap:25px;
+        max-width:100%;
+    }
+
     .footer-social a{
-        font-size:60px;
+        font-size:52px;
     }
 }
 
