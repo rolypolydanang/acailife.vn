@@ -2,333 +2,157 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Acai Life</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--b:#0f0f0f;--w:#fff;--s:#f5f1ea;--m:1200px}
+body{font:16px Arial,sans-serif;background:var(--b);color:var(--w);overflow-x:hidden}
 
-/* ==========================
-   BASE RESET + SYSTEM
-========================== */
+/* Ticker */
+.ticker{position:fixed;top:0;left:0;width:100%;height:60px;background:#000;border:1px solid #fff;border-left:0;border-right:0;display:flex;align-items:center;overflow:hidden;z-index:99}
+.ticker-track{display:flex;white-space:nowrap;width:max-content;animation:scroll 22s linear infinite}
+.ticker-track span{padding-right:80px;font:700 24px Arial;text-transform:uppercase;letter-spacing:1.5px}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+/* Hero */
+.hero{margin-top:60px;height:calc(100vh - 60px);position:relative;overflow:hidden}
+.hero-bg{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
 
-:root{
-    --black:#0f0f0f;
-    --white:#ffffff;
-    --soft:#f5f1ea;
-    --max:1200px;
-}
-
-html,body{
-    overflow-x:hidden;
-    font-family:Arial, Helvetica, sans-serif;
-    background:var(--black);
-    color:var(--white);
-}
-
-/* ==========================
-   TICKER
-========================== */
-
-.ticker{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:60px;
-    background:#000;
-    border-top:1px solid #fff;
-    border-bottom:1px solid #fff;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    z-index:999;
-}
-
-.ticker-track{
-    display:flex;
-    width:max-content;
-    white-space:nowrap;
-    animation:scroll 22s linear infinite;
-    will-change:transform;
-}
-
-.ticker-track span{
-    font-size:24px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    padding-right:80px;
-}
-
-@keyframes scroll{
-    from{transform:translate3d(0,0,0);}
-    to{transform:translate3d(-50%,0,0);}
-}
-
-/* ==========================
-   HERO
-========================== */
-
-.hero{
-    margin-top:60px;
-    height:calc(100vh - 60px);
-    position:relative;
-    overflow:hidden;
-}
-
-.hero-bg{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    transform:scale(1.02);
-}
-
-/* CLICKABLE LOGO */
 .hero-logo-link{
-    position:absolute;
-    top:38%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    z-index:2;
-    display:inline-block;
+position:absolute;
+top:38%;
+left:50%;
+transform:translate(-50%,-50%);
+text-align:center;
 }
 
 .hero-overlay-logo{
-    width:55vw;
-    max-width:750px;
-    min-width:220px;
-    pointer-events:auto;
-    filter:drop-shadow(0 20px 40px rgba(0,0,0,0.35));
+width:55vw;
+max-width:750px;
+min-width:220px;
+filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
 }
 
-/* ==========================
-   FOOTER
-========================== */
-
-.footer{
-    background:var(--soft);
-    color:#000;
-    padding:100px 0;
-    text-transform:uppercase;
-    letter-spacing:1px;
+/* Rounded Buttons */
+.hero-buttons{
+margin-top:28px;
+display:flex;
+gap:16px;
+justify-content:center;
+flex-wrap:wrap;
 }
 
-.footer-inner{
-    max-width:var(--max);
-    margin:0 auto;
-    padding:0 32px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
+.hero-buttons a{
+padding:12px 28px;
+border:1px solid var(--w);
+color:#000;
+background:var(--w);
+text-decoration:none;
+text-transform:uppercase;
+letter-spacing:1.5px;
+font:700 24px Arial;
+transition:.25s ease;
+display:inline-block;
+text-align:center;
+min-width:220px;
+border-radius:50px; /* Makes buttons rounded */
 }
 
-/* LEFT NAV */
-
-.footer-nav{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+.hero-buttons a:hover{
+background:transparent;
+color:var(--w);
+transform:translateY(-2px);
 }
 
-.footer-nav a{
-    font-size:28px;
-    font-weight:700;
-    text-decoration:none;
-    color:#000;
+/* Footer */
+.footer{background:var(--s);color:#000;padding:100px 0;text-transform:uppercase;letter-spacing:1px}
+.footer-inner{max-width:var(--m);margin:auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.footer-nav{display:flex;flex-direction:column;gap:18px}
+.footer a{color:inherit;text-decoration:none}
+.footer-nav a{font:700 28px Arial}
+.footer-nav a:hover,.footer-social a:hover{opacity:.5}
+.footer-right{max-width:420px;margin-left:auto;text-align:right;display:flex;flex-direction:column;justify-content:space-between}
+.footer-info h2{font-size:20px;margin-bottom:18px}
+.footer-info p{font-size:14px;line-height:1.8;margin-bottom:18px}
+.footer-social{display:flex;justify-content:flex-end;gap:28px;margin-top:30px}
+.footer-social a{font-size:34px;transition:.25s}
+.footer-social a:hover{transform:translateY(-3px)}
+
+@media(max-width:768px){
+.hero{height:100svh}
+.hero-logo-link{top:35%}
+.hero-overlay-logo{width:80vw;max-width:none;min-width:0}
+.footer-inner{grid-template-columns:1fr;padding:0 20px;gap:60px}
+.footer-right{text-align:left;margin:0}
+.footer-social{justify-content:flex-start;flex-wrap:wrap}
+
+/* mobile buttons */
+.hero-buttons{flex-direction:column;align-items:center}
+.hero-buttons a{width:260px;text-align:center;font-size:18px}
 }
-
-.footer-nav a:hover{
-    opacity:0.45;
-}
-
-/* RIGHT */
-
-.footer-right{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    height:100%;
-    max-width:420px;
-    margin-left:auto;
-    text-align:right;
-}
-
-.footer-info h2{
-    font-size:20px;
-    font-weight:700;
-    margin-bottom:18px;
-}
-
-.footer-info p{
-    font-size:14px;
-    line-height:1.8;
-    margin-bottom:18px;
-    font-weight:500;
-}
-
-.footer-info a{
-    color:inherit;
-    text-decoration:none;
-}
-
-/* SOCIAL */
-
-.footer-social{
-    display:flex;
-    justify-content:flex-end;
-    gap:28px;
-    margin-top:30px;
-}
-
-.footer-social a{
-    font-size:34px;
-    color:#000;
-    transition:0.25s ease;
-}
-
-.footer-social a:hover{
-    transform:translateY(-3px);
-    opacity:0.5;
-}
-
-/* ==========================
-   MOBILE (FULL SCREEN HERO FIX)
-========================== */
-
-@media (max-width:768px){
-
-    .hero{
-        height:100svh;
-    }
-
-    .hero-logo-link{
-        top:35%;
-    }
-
-    .hero-overlay-logo{
-        width:80vw;
-        max-width:80vw;
-        min-width:0;
-    }
-
-    .footer-inner{
-        grid-template-columns:1fr;
-        gap:60px;
-        padding:0 20px;
-    }
-
-    .footer-right{
-        text-align:left;
-        margin-left:0;
-        align-items:flex-start;
-    }
-
-    .footer-social{
-        justify-content:flex-start;
-        flex-wrap:wrap;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- TICKER -->
 <div class="ticker">
-    <div class="ticker-track">
-        <span>AUTHENTIC AÇAÍ</span>
-        <span>FROZEN YOGURT</span>
-        <span>PREMIUM TOPPINGS</span>
-        <span>ENERGISING SMOOTHIES</span>
-        <span>SPECIALTY COFFEE</span>
-
-        <span>AUTHENTIC AÇAÍ</span>
-        <span>FROZEN YOGURT</span>
-        <span>PREMIUM TOPPINGS</span>
-        <span>ENERGISING SMOOTHIES</span>
-        <span>SPECIALTY COFFEE</span>
-    </div>
+<div class="ticker-track">
+<span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
+<span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
+</div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
+<img src="/images/acai-life-index-image.webp" class="hero-bg" alt="">
 
-    <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="Acai Life Background">
+<div class="hero-logo-link">
+<img src="images/acai-life-logo-hero.webp" class="hero-overlay-logo" alt="Acai Life">
 
-    <!-- CLICKABLE LOGO -->
-    <a href="/" class="hero-logo-link">
-        <img src="images/acai-life-logo-hero.webp" class="hero-overlay-logo" alt="Acai Life Logo">
-    </a>
+<div class="hero-buttons">
+<a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank">Find Us</a>
+<a href="/#" target="_blank">GrabFood</a>
+</div>
+</div>
 
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
+<div class="footer-inner">
 
-    <div class="footer-inner">
+<nav class="footer-nav">
+<a href="#">MENU</a>
+<a href="#">CONTACT</a>
+<a href="#">ABOUT</a>
+<a href="#">WHOLESALE</a>
+<a href="#">BLOG</a>
+</nav>
 
-        <nav class="footer-nav">
-            <a href="#">MENU</a>
-            <a href="#">FIND US</a>
-            <a href="#">ABOUT</a>
-            <a href="#">WHOLESALE</a>
-            <a href="#">BLOG</a>
-        </nav>
+<div class="footer-right">
 
-        <div class="footer-right">
+<div class="footer-info">
+<a href="/"><h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2></a>
 
-            <div class="footer-info">
+<p>05 AN THƯỢNG 6, BẮC MỸ PHÚ,<br>NGŨ HÀNH SƠN, ĐÀ NẴNG 550000, VIETNAM</p>
 
-                <a href="/" style="color:inherit; text-decoration:none;">
-                    <h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2>
-                </a>
+<p>
+<a href="tel:+84394303001">+84 394 303 001</a><br>
+<a href="mailto:acailife.vn@gmail.com">ACAILIFE.VN@GMAIL.COM</a>
+</p>
+</div>
 
-                <p>
-                    05 AN THƯỢNG 6, BẮC MỸ PHÚ,<br>
-                    NGŨ HÀNH SƠN, ĐÀ NẴNG 550000, VIETNAM
-                </p>
+<div class="footer-social">
+<a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.tiktok.com/@acaioi.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+<a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+</div>
 
-                <p>
-                    <a href="tel:+84394303001">+84 394 303 001</a><br>
-                    <a href="mailto:acailife.vn@gmail.com">ACAILIFE.VN@GMAIL.COM</a>
-                </p>
-
-            </div>
-
-            <div class="footer-social">
-
-                <a href="https://www.facebook.com/acailifevn" target="_blank">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-
-                <a href="https://www.instagram.com/acailife.vn" target="_blank">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a href="https://www.tiktok.com/@acaioi.vn" target="_blank">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-
-                <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank">
-                    <i class="fa-solid fa-location-dot"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </footer>
 
 </body>
