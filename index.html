@@ -24,15 +24,15 @@ body{font:16px Arial,sans-serif;background:var(--b);color:var(--w);overflow-x:hi
 
 .hero-logo-link{
 position:absolute;
-top:5%; /* Desktop position at 5% */
+top:5%;
 left:50%;
 transform:translateX(-50%);
 text-align:center;
 }
 
 .hero-overlay-logo{
-width:55vw;
-max-width:750px;
+width:70vw; /* Updated to 70vw for desktop */
+max-width:950px;
 min-width:220px;
 filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
 }
@@ -86,10 +86,14 @@ transform:translateY(-2px);
 @media(max-width:768px){
 .hero{height:100svh}
 .hero-logo-link{
-    top:35%; /* Mobile position locked at 35% */
-    transform:translate(-50%,-50%); /* Re-centers logo vertically for mobile */
+    top:35%;
+    transform:translate(-50%,-50%);
 }
-.hero-overlay-logo{width:80vw;max-width:none;min-width:0}
+.hero-overlay-logo{
+    width:90vw; /* Updated to 90vw for mobile */
+    max-width:none;
+    min-width:0
+}
 .footer-inner{grid-template-columns:1fr;padding:0 20px;gap:60px}
 .footer-right{text-align:left;margin:0}
 .footer-social{justify-content:flex-start;flex-wrap:wrap}
