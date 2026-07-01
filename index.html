@@ -40,10 +40,10 @@ min-width:220px;
 filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
 }
 
-/* Buttons: Independent, right-aligned, moved lower */
+/* Buttons: Independent, right-aligned */
 .hero-buttons{
 position:absolute;
-top:7.5%; /* Adjusted to 15% to move buttons lower */
+top:7.5%;
 right:50px;
 display:flex;
 flex-direction:column;
@@ -88,6 +88,13 @@ transform:translateY(-2px);
 .footer-social a{font-size:34px;transition:.25s}
 .footer-social a:hover{transform:translateY(-3px)}
 
+/* Intermediate Responsive Fix: Shrink buttons so they don't hit the logo */
+@media(max-width:1000px){
+    .hero-buttons{ right: 20px; gap: 10px; }
+    .hero-buttons a{ padding: 8px 20px; font-size: 18px; min-width: 160px; }
+}
+
+/* Mobile Layout */
 @media(max-width:768px){
 .hero{height:100svh}
 .hero-logo-container{
