@@ -14,7 +14,7 @@ body{font:16px Arial,sans-serif;background:var(--b);color:var(--w);overflow-x:hi
 
 /* Ticker */
 .ticker{position:fixed;top:0;left:0;width:100%;height:60px;background:#000;border:1px solid #fff;border-left:0;border-right:0;display:flex;align-items:center;overflow:hidden;z-index:99}
-.ticker-track{display:flex;white-space:nowrap;width:max-content;animation:scroll 22s linear infinite}
+.ticker-track{display:flex;white-space:nowrap;width:max-content;animation:scroll 22s linear infinite;will-change:transform}
 .ticker-track span{padding-right:80px;font:700 24px Arial;text-transform:uppercase;letter-spacing:1.5px}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
@@ -37,7 +37,7 @@ min-width:220px;
 filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
 }
 
-/* Rounded Buttons - Inverted on Hover */
+/* Rounded Buttons - Inverted on Hover, no outline */
 .hero-buttons{
 margin-top:28px;
 display:flex;
@@ -65,6 +65,7 @@ border-radius:50px;
 .hero-buttons a:hover{
 background:#000;
 color:var(--w);
+border-color:#000;
 transform:translateY(-2px);
 }
 
