@@ -22,30 +22,30 @@ body{font:16px Arial,sans-serif;background:var(--b);color:var(--w);overflow-x:hi
 .hero{margin-top:60px;height:calc(100vh - 60px);position:relative;overflow:hidden}
 .hero-bg{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
 
-/* Container for Logo and Buttons */
-.hero-logo-link{
+/* Logo: Perfectly Centered */
+.hero-logo-container{
 position:absolute;
-top:5%; /* Logo 5% from top */
+top:5%;
 left:50%;
 transform:translateX(-50%);
 text-align:center;
-width:100%;
 }
 
 .hero-overlay-logo{
-width:70vw; /* Desktop size */
+width:70vw;
 max-width:950px;
 min-width:220px;
 filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
-margin-bottom:28px; /* Space between logo and buttons */
 }
 
-/* Button Stack */
+/* Buttons: Absolute positioned to the right */
 .hero-buttons{
+position:absolute;
+top:5%;
+right:50px;
 display:flex;
 flex-direction:column;
 gap:16px;
-align-items:center;
 }
 
 .hero-buttons a{
@@ -87,8 +87,19 @@ transform:translateY(-2px);
 
 @media(max-width:768px){
 .hero{height:100svh}
-.hero-logo-link{top:35%}
+.hero-logo-container{
+    top:35%;
+    transform:translate(-50%,-50%);
+}
 .hero-overlay-logo{width:90vw;max-width:none;min-width:0}
+/* Move buttons under logo for mobile */
+.hero-buttons{
+    position:relative;
+    top:auto;
+    right:auto;
+    margin-top:40px;
+    align-items:center;
+}
 .footer-inner{grid-template-columns:1fr;padding:0 20px;gap:60px}
 .footer-right{text-align:left;margin:0}
 .footer-social{justify-content:flex-start;flex-wrap:wrap}
@@ -96,7 +107,6 @@ transform:translateY(-2px);
 /* Mobile buttons */
 .hero-buttons a{
     width:200px; 
-    min-width:200px;
     text-align:center; 
     font-size:24px; 
     padding:10px 16px;
@@ -117,13 +127,13 @@ transform:translateY(-2px);
 <section class="hero">
 <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="">
 
-<div class="hero-logo-link">
+<div class="hero-logo-container">
 <img src="images/acai-life-logo-hero.webp" class="hero-overlay-logo" alt="Acai Life">
+</div>
 
 <div class="hero-buttons">
 <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank">Find Us</a>
 <a href="/#" target="_blank">GrabFood</a>
-</div>
 </div>
 
 </section>
