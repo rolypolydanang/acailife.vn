@@ -24,9 +24,9 @@ body{font:16px Arial,sans-serif;background:var(--b);color:var(--w);overflow-x:hi
 
 .hero-logo-link{
 position:absolute;
-top:10%; /* Desktop position at 10% */
+top:5%; /* Desktop position at 5% */
 left:50%;
-transform:translateX(-50%); /* Removed vertical shift from transform */
+transform:translateX(-50%);
 text-align:center;
 }
 
@@ -86,7 +86,7 @@ transform:translateY(-2px);
 @media(max-width:768px){
 .hero{height:100svh}
 .hero-logo-link{
-    top:35%; /* Locked at 35% for mobile */
+    top:35%; /* Mobile position locked at 35% */
     transform:translate(-50%,-50%); /* Re-centers logo vertically for mobile */
 }
 .hero-overlay-logo{width:80vw;max-width:none;min-width:0}
