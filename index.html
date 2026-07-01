@@ -96,25 +96,23 @@ html, body{
 }
 
 /* ==========================
-   FOOTER (EDGE TO EDGE GRID)
+   FOOTER (CLEAN TYPOGRAPHY)
 ========================== */
 .footer{
     background:#fff;
     color:#000;
     padding:80px 0;
     text-transform:uppercase;
-    font-weight:700;
     letter-spacing:1px;
 }
 
-/* FULL WIDTH GRID (NO MAX WIDTH BOX) */
+/* GRID */
 .footer-inner{
     width:100%;
     display:grid;
     grid-template-columns:repeat(12, 1fr);
     column-gap:40px;
-
-    padding:0 40px; /* keeps breathing room but still full width */
+    padding:0 40px;
 }
 
 /* LEFT NAV */
@@ -130,6 +128,7 @@ html, body{
     font-size:30px;
     line-height:1.1;
     color:#000;
+    font-weight:700;
 }
 
 .footer-nav a:hover{
@@ -144,11 +143,12 @@ html, body{
     align-items:flex-end;
 }
 
-/* INFO */
+/* INFO TEXT */
 .footer-info h2{
     font-size:22px;
     text-align:right;
     margin-bottom:20px;
+    font-weight:700;
 }
 
 .footer-info p{
@@ -156,6 +156,7 @@ html, body{
     line-height:1.8;
     text-align:right;
     margin-bottom:20px;
+    font-weight:400;
 }
 
 /* SOCIAL */
