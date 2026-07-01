@@ -24,7 +24,7 @@ body{font:16px Arial,sans-serif;background:var(--b);color:var(--w);overflow-x:hi
 
 .hero-logo-link{
 position:absolute;
-top:38%;
+top:30%; /* Desktop position adjusted up */
 left:50%;
 transform:translate(-50%,-50%);
 text-align:center;
@@ -37,7 +37,7 @@ min-width:220px;
 filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
 }
 
-/* Rounded Buttons - Inverted on Hover, no outline */
+/* Rounded Buttons */
 .hero-buttons{
 margin-top:28px;
 display:flex;
@@ -85,8 +85,8 @@ transform:translateY(-2px);
 
 @media(max-width:768px){
 .hero{height:100svh}
-.hero-logo-link{top:35%}
-.hero-overlay-logo{width:90vw;max-width:none;min-width:0}
+.hero-logo-link{top:35%} /* Mobile position preserved */
+.hero-overlay-logo{width:80vw;max-width:none;min-width:0}
 .footer-inner{grid-template-columns:1fr;padding:0 20px;gap:60px}
 .footer-right{text-align:left;margin:0}
 .footer-social{justify-content:flex-start;flex-wrap:wrap}
