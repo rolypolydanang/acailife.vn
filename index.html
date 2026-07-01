@@ -22,75 +22,73 @@ body{font:16px Arial,sans-serif;background:var(--b);color:var(--w);overflow-x:hi
 .hero{margin-top:60px;height:calc(100vh - 60px);position:relative;overflow:hidden}
 .hero-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;transform:scale(1.02);z-index:0}
 
-/* Logo */
+/* Logo: Restricted width to prevent overlap */
 .hero-logo-container{
     position:absolute;
     top:5%;
     left:50%;
     transform:translateX(-50%);
+    width: 60%; 
     text-align:center;
-    width:100%;
     z-index:1;
-    pointer-events: none;
 }
 .hero-overlay-logo{
-    width:70vw;
-    max-width:950px;
+    width:100%;
+    max-width:800px;
     filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
 }
 
-/* Buttons: Anchored strictly to the right */
+/* Buttons: Aggressively right-aligned */
 .hero-buttons{
     position:absolute;
     top: 7.5%;
-    right: 20px; /* Keep them very close to the edge */
+    right: 10px;
     display:flex;
     flex-direction:column;
-    gap:16px;
+    gap:10px;
     z-index:2;
 }
 
 .hero-buttons a{
-    padding: 12px 25px;
+    padding: 10px 20px;
     border:1px solid var(--w);
     color:#000;
     background:var(--w);
     text-decoration:none;
     text-transform:uppercase;
-    letter-spacing:1.5px;
-    font:700 22px Arial;
-    transition: all 0.3s ease;
+    font:700 18px Arial;
     text-align:center;
     border-radius:50px;
     white-space: nowrap;
 }
 
-/* Aggressive breakpoint: Hide buttons before they can overlap the logo */
-@media(max-width: 1200px) {
+/* Aggressive shrink for tablets */
+@media(max-width:1100px){
+    .hero-buttons a{ padding: 6px 12px; font-size: 14px; min-width: 100px; }
+}
+
+/* Hide buttons completely before overlap occurs */
+@media(max-width:850px){
     .hero-buttons { display: none; }
 }
 
-/* Mobile Layout: Bring them back, stacked */
+/* Mobile Stacked */
 @media(max-width:768px){
     .hero{height:100svh}
-    .hero-logo-container{ top:35%; transform:translate(-50%,-50%); }
-    .hero-overlay-logo{ width:90vw; }
-    
-    /* Stacked layout */
+    .hero-logo-container{ top:35%; width: 90%; }
     .hero-buttons{
         display: flex;
-        position:absolute;
+        position: absolute;
         top: 60%;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%;
-        align-items: center;
+        width: 80%;
     }
 }
 
 /* Footer */
 .footer{background:var(--s);color:#000;padding:100px 0;text-transform:uppercase;letter-spacing:1px}
-.footer-inner{max-width:var(--m);margin:auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.footer-inner{max-width:1200px;margin:auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px}
 .footer-nav{display:flex;flex-direction:column;gap:18px}
 .footer a{color:inherit;text-decoration:none}
 .footer-nav a{font:700 28px Arial}
