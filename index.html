@@ -96,7 +96,7 @@ html, body{
 }
 
 /* ==========================
-   FOOTER (GRID SYSTEM)
+   FOOTER (EDGE TO EDGE GRID)
 ========================== */
 .footer{
     background:#fff;
@@ -107,18 +107,17 @@ html, body{
     letter-spacing:1px;
 }
 
-/* 12-column grid container */
+/* FULL WIDTH GRID (NO MAX WIDTH BOX) */
 .footer-inner{
-    max-width:1200px;
-    margin:0 auto;
-    padding:0 40px;
-
+    width:100%;
     display:grid;
     grid-template-columns:repeat(12, 1fr);
     column-gap:40px;
+
+    padding:0 40px; /* keeps breathing room but still full width */
 }
 
-/* LEFT NAV (span 4 columns) */
+/* LEFT NAV */
 .footer-nav{
     grid-column:1 / span 4;
     display:flex;
@@ -137,7 +136,7 @@ html, body{
     opacity:0.5;
 }
 
-/* RIGHT COLUMN (span 8 columns, pushed right naturally) */
+/* RIGHT COLUMN */
 .footer-right{
     grid-column:7 / span 6;
     display:flex;
@@ -186,6 +185,7 @@ html, body{
     .footer-inner{
         grid-template-columns:1fr;
         row-gap:50px;
+        padding:0 20px;
     }
 
     .footer-nav,
