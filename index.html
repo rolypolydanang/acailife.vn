@@ -92,19 +92,21 @@ html,body{
     transform:scale(1.02);
 }
 
-/* ✅ FIXED + IMPROVED LOGO SCALING */
-.hero-overlay-logo{
+/* CLICKABLE LOGO */
+.hero-logo-link{
     position:absolute;
     top:38%;
     left:50%;
     transform:translate(-50%,-50%);
-    
+    z-index:2;
+    display:inline-block;
+}
+
+.hero-overlay-logo{
     width:55vw;
     max-width:750px;
     min-width:220px;
-
-    z-index:2;
-    pointer-events:none;
+    pointer-events:auto;
     filter:drop-shadow(0 20px 40px rgba(0,0,0,0.35));
 }
 
@@ -127,7 +129,6 @@ html,body{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:80px;
-    align-items:start;
 }
 
 /* LEFT NAV */
@@ -143,7 +144,6 @@ html,body{
     font-weight:700;
     text-decoration:none;
     color:#000;
-    line-height:1.1;
 }
 
 .footer-nav a:hover{
@@ -206,10 +206,13 @@ html,body{
 
 @media (max-width:768px){
 
+    .hero-logo-link{
+        top:35%;
+    }
+
     .hero-overlay-logo{
         width:78vw;
         max-width:100%;
-        top:35%;
     }
 
     .footer-inner{
@@ -254,8 +257,14 @@ html,body{
 
 <!-- HERO -->
 <section class="hero">
+
     <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="Acai Life Background">
-    <img src="images/acai-life-logo-hero.webp" class="hero-overlay-logo" alt="Acai Life Logo">
+
+    <!-- CLICKABLE LOGO -->
+    <a href="/" class="hero-logo-link">
+        <img src="images/acai-life-logo-hero.webp" class="hero-overlay-logo" alt="Acai Life Logo">
+    </a>
+
 </section>
 
 <!-- FOOTER -->
@@ -275,7 +284,10 @@ html,body{
 
             <div class="footer-info">
 
-                <h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2>
+                <!-- CLICKABLE BRAND TITLE -->
+                <a href="/" style="color:inherit; text-decoration:none;">
+                    <h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2>
+                </a>
 
                 <p>
                     05 AN THƯỢNG 6, BẮC MỸ PHÚ,<br>
