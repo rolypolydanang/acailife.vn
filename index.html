@@ -83,14 +83,16 @@ html, body{
     display:block;
 }
 
-/* ✔️ UPDATED: LOGO = 80% OF SCREEN WIDTH */
+/* ==========================
+   HERO LOGO
+========================== */
 .hero-overlay-logo{
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
-    width:80vw;
-    max-width:80vw;
+    width:50vw;       /* DESKTOP */
+    max-width:50vw;
     height:auto;
     z-index:2;
     pointer-events:none;
@@ -190,7 +192,7 @@ html, body{
     }
 
     .hero-overlay-logo{
-        width:80vw;
+        width:80vw;   /* MOBILE */
         max-width:80vw;
     }
 
