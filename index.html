@@ -22,7 +22,7 @@ body{font:16px Arial,sans-serif;background:var(--b);color:var(--w);overflow-x:hi
 .hero{margin-top:60px;height:calc(100vh - 60px);position:relative;overflow:hidden}
 .hero-bg{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
 
-/* Logo: Perfectly Centered */
+/* Logo: Centered horizontally, 5% from top */
 .hero-logo-container{
 position:absolute;
 top:5%;
@@ -38,10 +38,11 @@ min-width:220px;
 filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
 }
 
-/* Buttons: Absolute positioned to the right */
+/* Buttons: Centered vertically to the right */
 .hero-buttons{
 position:absolute;
-top:5%;
+top: 50%;
+transform: translateY(-50%);
 right:50px;
 display:flex;
 flex-direction:column;
@@ -97,6 +98,7 @@ transform:translateY(-2px);
     position:relative;
     top:auto;
     right:auto;
+    transform: none;
     margin-top:40px;
     align-items:center;
 }
@@ -104,9 +106,9 @@ transform:translateY(-2px);
 .footer-right{text-align:left;margin:0}
 .footer-social{justify-content:flex-start;flex-wrap:wrap}
 
-/* Mobile buttons */
 .hero-buttons a{
     width:200px; 
+    min-width:200px;
     text-align:center; 
     font-size:24px; 
     padding:10px 16px;
