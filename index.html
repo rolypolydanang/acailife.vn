@@ -22,28 +22,30 @@ body{font:16px Arial,sans-serif;background:var(--b);color:var(--w);overflow-x:hi
 .hero{margin-top:60px;height:calc(100vh - 60px);position:relative;overflow:hidden}
 .hero-bg{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
 
+/* Flex container for Logo and Buttons */
 .hero-logo-link{
 position:absolute;
-top:5%;
+top:50%;
 left:50%;
-transform:translateX(-50%);
-text-align:center;
+transform:translate(-50%,-50%);
+display:flex;
+align-items:center;
+gap:40px;
+justify-content:center;
 }
 
 .hero-overlay-logo{
-width:70vw; /* Updated to 70vw for desktop */
+width:70vw;
 max-width:950px;
 min-width:220px;
 filter:drop-shadow(0 20px 40px rgba(0,0,0,.35));
 }
 
-/* Rounded Buttons */
+/* Vertical Button Stack */
 .hero-buttons{
-margin-top:28px;
 display:flex;
+flex-direction:column;
 gap:16px;
-justify-content:center;
-flex-wrap:wrap;
 }
 
 .hero-buttons a{
@@ -86,11 +88,12 @@ transform:translateY(-2px);
 @media(max-width:768px){
 .hero{height:100svh}
 .hero-logo-link{
+    flex-direction:column;
     top:35%;
-    transform:translate(-50%,-50%);
+    gap:28px;
 }
 .hero-overlay-logo{
-    width:90vw; /* Updated to 90vw for mobile */
+    width:90vw;
     max-width:none;
     min-width:0
 }
