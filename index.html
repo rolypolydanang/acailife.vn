@@ -59,8 +59,8 @@
         @media(max-width:768px) {
             .hero { height: 100svh; }
             
-            /* Logo Mobile Overrides */
-            .hero-overlay-logo {
+            /* Increased specificity to ensure this overrides the default */
+            .hero .hero-overlay-logo {
                 width: 95%;
                 min-width: unset;
             }
