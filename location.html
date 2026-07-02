@@ -11,6 +11,7 @@
         :root { --b: #0f0f0f; --w: #fff; --s: #f5f1ea; }
         body { font: 16px 'Inter', Arial, sans-serif; background: var(--b); color: var(--w); overflow-x: hidden; }
 
+        /* Desktop: Fixed height wrapper for map-to-bottom */
         .page-wrapper { padding-top: 60px; display: flex; flex-direction: column; }
         @media(min-width: 769px) {
             .page-wrapper { height: 100vh; overflow: hidden; }
@@ -25,7 +26,7 @@
         .hero a { width: 70vw; max-width: 750px; }
         .hero img { width: 100%; display: block; }
         
-        /* Desktop: Standard size (40%) */
+        /* Desktop: 40% */
         .hero-secondary { width: 40%; min-width: 200px; max-width: 400px; }
         
         .map { width: 100%; flex-grow: 1; border: none; display: block; filter: grayscale(1) invert(0.9); min-height: 400px; }
@@ -47,8 +48,10 @@
         @media(max-width: 768px) {
             .hero { padding: 30px 15px; }
             .hero a { width: 95%; } 
-            /* Mobile: 50% smaller than desktop (40% * 0.5 = 20%) */
-            .hero-secondary { width: 20%; min-width: 100px; } 
+            
+            /* Mobile: Forced 50% reduction of original 40% (20%) */
+            .hero .hero-secondary { width: 20% !important; min-width: 100px !important; } 
+            
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
