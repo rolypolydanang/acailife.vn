@@ -15,16 +15,16 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root { --b: #0f0f0f; --w: #fff; --s: #f5f1ea; --m: 1200px; }
 
-        body { font: 16px 'Inter', Arial, sans-serif; background: var(--b); color: var(--w); overflow-x: hidden; }
+        body { font: 16px 'Inter', Arial, sans-serif; background: var(--b); color: var(--w); overflow-x: hidden; display: flex; flex-direction: column; min-height: 100svh; }
 
         .ticker { position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: #000; border: 1px solid #fff; border-left: 0; border-right: 0; display: flex; align-items: center; overflow: hidden; z-index: 99; pointer-events: none; }
         .ticker-track { display: flex; white-space: nowrap; width: max-content; animation: scroll 22s linear infinite; will-change: transform; }
         .ticker-track span { padding-right: 80px; font: 700 24px 'Inter', Arial; text-transform: uppercase; letter-spacing: 1.5px; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* The container for logos now flows in the document */
+        .page-content { margin-top: 60px; flex: 1; display: flex; flex-direction: column; }
+        
         .hero-container {
-            margin-top: 60px;
             width: 100%;
             background: var(--b);
             display: flex;
@@ -38,10 +38,9 @@
         .hero-overlay-logo { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .hero-secondary-img { width: 40%; min-width: 200px; max-width: 400px; }
 
-        /* Map now sits below the container automatically */
         .hero-map { 
             width: 100%; 
-            height: calc(100vh - 60px - 280px); /* Adjust 280px to match logo area height */
+            flex: 1;
             border: none; 
             display: block; 
             filter: grayscale(1) invert(0.9); 
@@ -64,7 +63,6 @@
         @media(max-width: 768px) {
             .hero-container { padding: 30px 15px; }
             .hero-secondary-img { width: 70%; }
-            .hero-map { height: calc(100vh - 60px - 220px); }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .footer-right { text-align: left; margin: 0; }
             .footer-social { justify-content: flex-start; flex-wrap: wrap; }
@@ -81,19 +79,46 @@
         </div>
     </div>
 
-    <!-- Logo section flows naturally -->
-    <section class="hero-container">
-        <a href="/" class="hero-logo-link">
-            <img src="images/acai-life-logo-hero.webp" class="hero-overlay-logo" alt="Acai Life Logo">
-        </a>
-        <img src="images/logo-secondary-location.webp" class="hero-secondary-img" alt="Location Details">
-    </section>
-    
-    <!-- Map follows immediately after -->
-    <iframe class="hero-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1782971630363!5m2!1sen!2smy" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="page-content">
+        <section class="hero-container">
+            <a href="/" class="hero-logo-link">
+                <img src="images/acai-life-logo-hero.webp" class="hero-overlay-logo" alt="Acai Life Logo">
+            </a>
+            <img src="images/logo-secondary-location.webp" class="hero-secondary-img" alt="Location Details">
+        </section>
+        
+        <iframe class="hero-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1782971630363!5m2!1sen!2smy" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
 
     <footer class="footer">
-        <!-- Footer remains the same -->
+        <div class="footer-inner">
+            <nav class="footer-nav">
+                <a href="#">MENU</a>
+                <a href="#">LOCATION</a>
+                <a href="#">ABOUT</a>
+                <a href="#">WHOLESALE</a>
+                <a href="#">BLOG</a>
+            </nav>
+
+            <div class="footer-right">
+                <div class="footer-info">
+                    <a href="/"><h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2></a>
+                    <p>05 AN THƯỢNG 6, BẮC MỸ PHÚ,<br>NGŨ HÀNH SƠN, ĐÀ NẴNG 550000, VIETNAM</p>
+                    <p>MON-SUN: 10:00 - 22:00</p>
+                    <p>
+                        <a href="tel:+84394303001">+84 394 303 001</a><br>
+                        <a href="mailto:acailife.vn@gmail.com">ACAILIFE.VN@GMAIL.COM</a>
+                    </p>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/acailifevn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/acailife.vn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@acaioi.vn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
