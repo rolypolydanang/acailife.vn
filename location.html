@@ -17,8 +17,8 @@
         .track span { padding-right: 80px; font: 700 24px 'Inter'; text-transform: uppercase; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* LOGO - Fixed position to match homepage */
-        .logo-container { 
+        /* LOGO GROUP - Updated for both logos */
+        .logo-group { 
             position: fixed; 
             top: 80px; 
             left: 50%; 
@@ -26,14 +26,23 @@
             z-index: 90; 
             width: 80vw; 
             max-width: 800px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            pointer-events: none;
+        }
+        .main-logo-link { width: 100%; pointer-events: auto; }
+        .main-logo-link img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
+        
+        .secondary-logo-img { 
+            width: 40%; 
+            max-width: 300px;
+            margin-top: 20px; 
             pointer-events: auto;
         }
-        .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
 
         /* PAGE LAYOUT */
-        .page-wrapper { display: flex; flex-direction: column; min-height: 100vh; padding-top: 60px; }
-        .hero { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; padding-top: 100px; }
-        .hero-secondary { width: 40%; min-width: 200px; max-width: 400px; margin-bottom: 40px; }
+        .page-wrapper { display: flex; flex-direction: column; min-height: 100vh; padding-top: 260px; }
         .map { width: 100%; flex-grow: 1; border: none; filter: grayscale(1) invert(0.9); min-height: 400px; }
 
         /* FOOTER */
@@ -51,8 +60,8 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            .logo-container { width: 90% !important; max-width: 350px !important; top: 80px; }
-            .hero { padding-top: 120px; }
+            .logo-group { width: 90% !important; max-width: 350px !important; top: 80px; }
+            .page-wrapper { padding-top: 200px; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
@@ -66,13 +75,15 @@
         </div>
     </div>
 
-    <!-- Logo moved outside of page-wrapper to stay fixed globally -->
-    <a href="/" class="logo-container"><img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo"></a>
+    <!-- Combined Logo Group -->
+    <div class="logo-group">
+        <a href="/" class="main-logo-link">
+            <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
+        </a>
+        <img src="images/logo-secondary-location.webp" class="secondary-logo-img" alt="Location Details">
+    </div>
 
     <div class="page-wrapper">
-        <section class="hero">
-            <img src="images/logo-secondary-location.webp" class="hero-secondary" alt="Location Details">
-        </section>
         <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1782971630363!5m2!1sen!2smy" allowfullscreen loading="lazy"></iframe>
     </div>
 
