@@ -11,7 +11,7 @@
         :root { --b: #0f0f0f; --w: #fff; --s: #f5f1ea; }
         body { font: 16px 'Inter', Arial, sans-serif; background: var(--b); color: var(--w); overflow-x: hidden; }
 
-        /* Desktop: Fixed height wrapper */
+        /* Desktop: Fixed height wrapper for map-to-bottom */
         .page-wrapper { padding-top: 60px; display: flex; flex-direction: column; }
         @media(min-width: 769px) {
             .page-wrapper { height: 100vh; overflow: hidden; }
@@ -45,6 +45,7 @@
 
         @media(max-width: 768px) {
             .hero { padding: 30px 15px; }
+            .hero a { width: 95%; } 
             .hero-secondary { width: 75%; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .f-right { text-align: left; margin: 0; }
