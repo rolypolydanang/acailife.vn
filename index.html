@@ -39,6 +39,7 @@
             max-width: 750px; 
             min-width: 220px; 
             filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); 
+            display: block;
         }
 
         .footer { background: var(--s); color: #000; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
@@ -56,13 +57,14 @@
         .footer-social a { font-size: 34px; transition: 0.25s; }
         .footer-social a:hover { transform: translateY(-3px); }
 
-        @media(max-width:768px) {
+        @media(max-width: 768px) {
             .hero { height: 100svh; }
             
-            /* Increased specificity to ensure this overrides the default */
-            .hero .hero-overlay-logo {
-                width: 95%;
-                min-width: unset;
+            /* Specific override to force 95% width on mobile */
+            .hero-logo-link .hero-overlay-logo {
+                width: 95% !important;
+                max-width: none !important;
+                min-width: 0 !important;
             }
             
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
