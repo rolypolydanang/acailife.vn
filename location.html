@@ -11,18 +11,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <style>
-        html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root { --b: #0f0f0f; --w: #fff; --s: #f5f1ea; --m: 1200px; }
 
-        body { font: 16px 'Inter', Arial, sans-serif; background: var(--b); color: var(--w); overflow-x: hidden; display: flex; flex-direction: column; min-height: 100svh; }
+        body { font: 16px 'Inter', Arial, sans-serif; background: var(--b); color: var(--w); overflow-x: hidden; }
 
         .ticker { position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: #000; border: 1px solid #fff; border-left: 0; border-right: 0; display: flex; align-items: center; overflow: hidden; z-index: 99; pointer-events: none; }
-        .ticker-track { display: flex; white-space: nowrap; width: max-content; animation: scroll 22s linear infinite; will-change: transform; }
-        .ticker-track span { padding-right: 80px; font: 700 24px 'Inter', Arial; text-transform: uppercase; letter-spacing: 1.5px; }
+        .ticker-track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
+        .ticker-track span { padding-right: 80px; font: 700 24px 'Inter', Arial; text-transform: uppercase; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        .page-content { margin-top: 60px; flex: 1; display: flex; flex-direction: column; }
+        .page-wrapper { padding-top: 60px; }
         
         .hero-container {
             width: 100%;
@@ -35,12 +34,13 @@
         }
         
         .hero-logo-link { width: 70vw; max-width: 750px; }
-        .hero-overlay-logo { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
+        .hero-overlay-logo { width: 100%; display: block; }
         .hero-secondary-img { width: 40%; min-width: 200px; max-width: 400px; }
 
+        /* The map fills the height of the screen minus the header/logo section */
         .hero-map { 
             width: 100%; 
-            flex: 1;
+            height: 70vh; 
             border: none; 
             display: block; 
             filter: grayscale(1) invert(0.9); 
@@ -62,10 +62,11 @@
 
         @media(max-width: 768px) {
             .hero-container { padding: 30px 15px; }
-            .hero-secondary-img { width: 70%; }
+            .hero-secondary-img { width: 75%; }
+            .hero-map { height: 50vh; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .footer-right { text-align: left; margin: 0; }
-            .footer-social { justify-content: flex-start; flex-wrap: wrap; }
+            .footer-social { justify-content: flex-start; }
         }
     </style>
 </head>
@@ -79,7 +80,7 @@
         </div>
     </div>
 
-    <div class="page-content">
+    <div class="page-wrapper">
         <section class="hero-container">
             <a href="/" class="hero-logo-link">
                 <img src="images/acai-life-logo-hero.webp" class="hero-overlay-logo" alt="Acai Life Logo">
