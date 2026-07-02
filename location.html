@@ -42,8 +42,9 @@
 
         @media(max-width: 768px) {
             .hero { padding: 30px 15px; }
-            .hero .logo-container { width: 300px !important; max-width: 95% !important; } 
-            .hero .hero-secondary { width: 40% !important; min-width: 160px !important; } 
+            /* Updated to be wide on mobile */
+            .hero .logo-container { width: 95% !important; max-width: none !important; } 
+            .hero .hero-secondary { width: 80% !important; min-width: 200px !important; } 
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
