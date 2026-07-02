@@ -4,112 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Location | Acai Life</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <style>
+        html { scroll-behavior: smooth; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font: 16px 'Inter', Arial, sans-serif; 
-            background: #111111; 
-            color: #fff; 
-            overflow-x: hidden; 
-        }
+        :root { --b: #0f0f0f; --w: #fff; --s: #f5f1ea; --m: 1200px; }
+
+        body { font: 16px 'Inter', Arial, sans-serif; background: var(--b); color: var(--w); overflow-x: hidden; }
 
         /* TICKER */
-        .ticker { 
-            position: fixed; top: 0; width: 100%; height: 60px; background: #111111; 
-            border-bottom: 1px solid #fff; display: flex; align-items: center; 
-            overflow: hidden; z-index: 100; pointer-events: none; 
-        }
-        .track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
-        .track span { padding-right: 80px; font: 700 24px 'Inter'; text-transform: uppercase; }
+        .ticker { position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: #000; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; z-index: 100; pointer-events: none; }
+        .ticker-track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
+        .ticker-track span { padding-right: 80px; font: 700 24px 'Inter', Arial; text-transform: uppercase; letter-spacing: 1.5px; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* LOGO GROUP */
-        .logo-group { 
-            position: fixed; top: 60px; left: 0; width: 100%; height: 260px; 
-            z-index: 90; display: flex; flex-direction: column; align-items: center; 
-            justify-content: center; background: #111111; pointer-events: none;
+        /* LOGO - Fixed position matches homepage */
+        .logo-container { 
+            position: fixed; 
+            top: 80px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            z-index: 90; 
+            width: 80vw; 
+            max-width: 800px; 
+            pointer-events: auto;
         }
-        .main-logo-link { width: 80vw; max-width: 800px; pointer-events: auto; }
-        .main-logo-link img { width: 100%; display: block; }
-        .secondary-logo-img { width: 40%; max-width: 300px; margin-top: 25px; pointer-events: auto; }
+        .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
 
-        /* PAGE LAYOUT - Adjusted for flow */
-        .page-wrapper { padding-top: 320px; }
-        .map { 
-            width: 100%; height: 60vh; border: none; 
-            filter: grayscale(1) invert(0.9); display: block;
-        }
+        /* MAP AREA */
+        .map-section { padding-top: 250px; padding-bottom: 50px; }
+        .map { width: 100%; height: 60vh; border: none; filter: grayscale(1) invert(0.9); display: block; }
 
         /* FOOTER */
-        .footer { 
-            background-color: #f5f1ea !important; 
-            color: #111111 !important; 
-            padding: 100px 0; 
-            text-transform: uppercase; 
-            letter-spacing: 1px;
-            position: relative;
-            z-index: 50;
-        }
-        .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
-        .nav { display: flex; flex-direction: column; gap: 18px; }
+        .footer { background: var(--s); color: #000; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-inner { max-width: var(--m); margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .footer-nav { display: flex; flex-direction: column; gap: 18px; }
         .footer a { color: inherit; text-decoration: none; }
-        .nav a { font: 700 28px 'Inter'; }
-        .nav a:hover { opacity: .5; }
-        .f-right { max-width: 420px; margin-left: auto; text-align: right; display: flex; flex-direction: column; justify-content: space-between; }
-        .f-info h2 { font-size: 20px; margin-bottom: 18px; }
-        .f-info p { font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
-        .f-social { display: flex; justify-content: flex-end; gap: 28px; margin-top: 30px; }
-        .f-social a { font-size: 34px; transition: 0.25s; }
-        .f-social a:hover { transform: translateY(-3px); opacity: .5; }
+        .footer-nav a { font: 700 28px 'Inter', Arial; display: inline-block; }
+        .footer-nav a:hover, .footer-social a:hover { opacity: .5; }
+        
+        .footer-right { max-width: 420px; margin-left: auto; text-align: right; display: flex; flex-direction: column; justify-content: space-between; }
+        .footer-info h2 { font-size: 20px; margin-bottom: 18px; }
+        .footer-info p { font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
+        .footer-social { display: flex; justify-content: flex-end; gap: 28px; margin-top: 30px; }
+        .footer-social a { font-size: 34px; transition: 0.25s; }
+        .footer-social a:hover { transform: translateY(-3px); }
 
         @media(max-width: 768px) {
-            .logo-group { height: 220px; }
-            .page-wrapper { padding-top: 280px; }
+            .logo-container { width: 90% !important; max-width: 350px !important; top: 80px; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
-            .f-right { text-align: left; margin: 0; }
-            .f-social { justify-content: flex-start; }
+            .footer-right { text-align: left; margin: 0; }
+            .footer-social { justify-content: flex-start; flex-wrap: wrap; }
         }
     </style>
 </head>
 <body>
+
     <div class="ticker" aria-hidden="true">
-        <div class="track">
+        <div class="ticker-track">
+            <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
             <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
         </div>
     </div>
 
-    <div class="logo-group">
-        <a href="/" class="main-logo-link">
-            <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
-        </a>
-        <img src="images/logo-secondary-location.webp" class="secondary-logo-img" alt="Location Details">
-    </div>
+    <a href="/" class="logo-container">
+        <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
+    </a>
 
-    <div class="page-wrapper">
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1782971630363!5m2!1sen!2smy" allowfullscreen loading="lazy"></iframe>
-    </div>
+    <section class="map-section">
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=..." allowfullscreen loading="lazy" aria-label="Google Map location of Acai Life"></iframe>
+    </section>
 
     <footer class="footer">
         <div class="footer-inner">
-            <nav class="nav">
-                <a href="#">MENU</a><a href="location.html">LOCATION</a><a href="#">ABOUT</a><a href="#">WHOLESALE</a><a href="#">BLOG</a>
+            <nav class="footer-nav">
+                <a href="#">MENU</a>
+                <a href="location.html">LOCATION</a>
+                <a href="#">ABOUT</a>
+                <a href="#">WHOLESALE</a>
+                <a href="#">BLOG</a>
             </nav>
-            <div class="f-right">
-                <div class="f-info">
+
+            <div class="footer-right">
+                <div class="footer-info">
                     <a href="/"><h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2></a>
                     <p>05 AN THƯỢNG 6, BẮC MỸ PHÚ,<br>NGŨ HÀNH SƠN, ĐÀ NẴNG 550000, VIETNAM</p>
                     <p>MON-SUN: 10:00 - 22:00</p>
-                    <p><a href="tel:+84394303001">+84 394 303 001</a><br>
-                    <a href="mailto:acailife.vn@gmail.com">ACAILIFE.VN@GMAIL.COM</a></p>
+                    <p>
+                        <a href="tel:+84394303001">+84 394 303 001</a><br>
+                        <a href="mailto:acailife.vn@gmail.com">ACAILIFE.VN@GMAIL.COM</a>
+                    </p>
                 </div>
-                <div class="f-social">
-                    <a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@acaioi.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/acailifevn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/acailife.vn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@acaioi.vn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i></a>
                 </div>
             </div>
         </div>
