@@ -19,7 +19,9 @@
         @keyframes scroll { to { transform: translateX(-50%); } }
 
         .hero { display: flex; flex-direction: column; align-items: center; padding: 40px 20px; gap: 20px; flex-shrink: 0; }
-        .hero .logo-container { width: 80vw; max-width: 800px; position: relative; }
+        
+        /* Desktop: Logo constrained to 600px */
+        .hero .logo-container { width: 80vw; max-width: 600px; position: relative; }
         .hero .logo-container img { width: 100%; display: block; }
         .hero-secondary { width: 40%; min-width: 200px; max-width: 400px; }
         
@@ -48,8 +50,9 @@
         /* Mobile-specific adjustments */
         @media(max-width: 768px) {
             .hero { padding: 30px 15px; }
-            /* Shifted up by 2.5% total, width at 95% */
-            .hero .logo-container { width: 95% !important; max-width: none !important; margin-top: -2.5%; } 
+            
+            /* Mobile: Logo constrained to 450px and shifted -2.5% */
+            .hero .logo-container { width: 95% !important; max-width: 450px !important; margin-top: -2.5%; } 
             .hero .hero-secondary { width: 95% !important; max-width: none !important; min-width: 0 !important; } 
             
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
