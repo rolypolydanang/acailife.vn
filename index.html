@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Acai Life</title>
+    <title>Acai Life | Authentic Açaí & Healthy Treats</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,31 +17,23 @@
 
         body { font: 16px 'Inter', Arial, sans-serif; background: var(--b); color: var(--w); overflow-x: hidden; }
 
-        .ticker { position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: #000; border: 1px solid #fff; border-left: 0; border-right: 0; display: flex; align-items: center; overflow: hidden; z-index: 99; pointer-events: none; }
-        .ticker-track { display: flex; white-space: nowrap; width: max-content; animation: scroll 22s linear infinite; will-change: transform; }
+        /* TICKER */
+        .ticker { position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: #000; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; z-index: 99; pointer-events: none; }
+        .ticker-track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
         .ticker-track span { padding-right: 80px; font: 700 24px 'Inter', Arial; text-transform: uppercase; letter-spacing: 1.5px; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        .hero { margin-top: 60px; height: calc(100vh - 60px); position: relative; overflow: hidden; }
-        .hero-bg { width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.02); will-change: transform; }
+        /* HERO */
+        .hero { margin-top: 60px; height: calc(100svh - 60px); position: relative; overflow: hidden; }
+        .hero-bg { width: 100%; height: 100%; object-fit: cover; object-position: center; }
         
-        /* Desktop: Logo constrained to 600px */
-        .hero-logo-link { 
-            position: absolute; 
-            top: 2.5%; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            z-index: 2;
-            width: 80vw; 
-            max-width: 600px; 
+        .logo-container { 
+            position: absolute; top: 2.5%; left: 50%; transform: translateX(-50%); 
+            z-index: 2; width: 80vw; max-width: 600px; 
         }
-        
-        .hero-overlay-logo { 
-            width: 100%;
-            display: block;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); 
-        }
+        .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
 
+        /* FOOTER */
         .footer { background: var(--s); color: #000; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
         .footer-inner { max-width: var(--m); margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .footer-nav { display: flex; flex-direction: column; gap: 18px; }
@@ -49,7 +41,6 @@
         .footer-nav a { font: 700 28px 'Inter', Arial; display: inline-block; }
         .footer-nav a:hover, .footer-social a:hover { opacity: .5; }
         
-        .footer-social a:active { transform: scale(0.9); opacity: 0.5; }
         .footer-right { max-width: 420px; margin-left: auto; text-align: right; display: flex; flex-direction: column; justify-content: space-between; }
         .footer-info h2 { font-size: 20px; margin-bottom: 18px; }
         .footer-info p { font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
@@ -58,15 +49,7 @@
         .footer-social a:hover { transform: translateY(-3px); }
 
         @media(max-width: 768px) {
-            .hero { height: 100svh; }
-            
-            /* Mobile: Logo constrained to 450px */
-            .hero-logo-link { 
-                width: 95% !important; 
-                max-width: 450px !important; 
-                top: 2.5% !important;
-            }
-            
+            .logo-container { width: 95% !important; max-width: 450px !important; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .footer-right { text-align: left; margin: 0; }
             .footer-social { justify-content: flex-start; flex-wrap: wrap; }
@@ -84,9 +67,9 @@
     </div>
 
     <section class="hero">
-        <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="">
-        <a href="/" class="hero-logo-link">
-            <img src="images/acai-life-logo-hero.webp" class="hero-overlay-logo" alt="Acai Life Logo">
+        <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="Fresh acai bowl served with seasonal fruits" fetchpriority="high" loading="eager">
+        <a href="/" class="logo-container">
+            <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
         </a>
     </section>
 
@@ -115,7 +98,7 @@
                     <a href="https://www.facebook.com/acailifevn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/acailife.vn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@acaioi.vn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i></a>
+                    <a href="https://maps.app.goo.gl/your-map-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i></a>
                 </div>
             </div>
         </div>
