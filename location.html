@@ -24,7 +24,7 @@
 
         .hero { margin-top: 60px; height: calc(100vh - 60px); position: relative; overflow: hidden; }
 
-        /* The logo wrapper matches the index logo positioning exactly */
+        /* Unified logo container with background */
         .logo-wrapper {
             position: absolute;
             top: 2.5%;
@@ -36,12 +36,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px; /* Space between logo and location badge */
+            gap: 20px;
+            background: var(--b);
+            padding: 30px 20px;
+            border-radius: 0 0 20px 20px; /* Subtle rounding at the bottom */
         }
         
         .hero-logo-link { width: 100%; }
         .hero-overlay-logo { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
-        .hero-secondary-img { width: 40%; max-width: 400px; }
+        .hero-secondary-img { width: 40%; min-width: 200px; max-width: 400px; }
 
         .hero-map { 
             width: 100%; 
@@ -67,8 +70,12 @@
 
         @media(max-width: 768px) {
             .hero { height: 100svh; }
-            .logo-wrapper { width: 95% !important; top: 2.5% !important; }
-            .hero-secondary-img { width: 80%; }
+            .logo-wrapper { 
+                width: 95% !important; 
+                top: 2.5% !important; 
+                padding: 20px 10px; 
+            }
+            .hero-secondary-img { width: 70%; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .footer-right { text-align: left; margin: 0; }
             .footer-social { justify-content: flex-start; flex-wrap: wrap; }
