@@ -11,27 +11,27 @@
         :root { --b: #0f0f0f; --w: #fff; --s: #f5f1ea; }
         body { font: 16px 'Inter', Arial, sans-serif; background: var(--b); color: var(--w); overflow-x: hidden; }
 
-        .page-wrapper { padding-top: 60px; height: 100vh; display: flex; flex-direction: column; }
-
-        /* TICKER */
+        /* TICKER - Shared */
         .ticker { position: fixed; top: 0; width: 100%; height: 60px; background: #000; border: 1px solid #fff; border-left: 0; border-right: 0; display: flex; align-items: center; overflow: hidden; z-index: 99; pointer-events: none; }
         .track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
         .track span { padding-right: 80px; font: 700 24px 'Inter'; text-transform: uppercase; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* HERO - Matches Home */
-        .hero { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; min-height: 300px; }
+        /* HERO - Aligned with Homepage to keep Logo Position stable */
+        .page-wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+        .hero { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; padding-top: 60px; }
         
+        /* LOGO - Identical to Homepage */
         .logo-container { 
             position: absolute; top: 2.5%; left: 50%; transform: translateX(-50%); 
             z-index: 10; width: 80vw; max-width: 600px; 
         }
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
 
-        .hero-secondary { width: 40%; min-width: 200px; max-width: 400px; margin-top: 40px; }
-        .map { width: 100%; flex-grow: 1; border: none; filter: grayscale(1) invert(0.9); }
+        .hero-secondary { width: 40%; min-width: 200px; max-width: 400px; margin-bottom: 20px; }
+        .map { width: 100%; flex-grow: 1; border: none; filter: grayscale(1) invert(0.9); min-height: 400px; }
 
-        /* FOOTER */
+        /* FOOTER - Shared */
         .footer { background: var(--s); color: #000; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
@@ -47,7 +47,7 @@
 
         @media(max-width: 768px) {
             .logo-container { width: 95% !important; max-width: 450px !important; top: 2.5% !important; }
-            .hero-secondary { width: 90% !important; }
+            .hero { padding-top: 80px; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
