@@ -11,28 +11,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <style>
-        html, body { height: 100%; margin: 0; overflow: hidden; }
+        html, body { height: 100%; margin: 0; overflow-x: hidden; overflow-y: auto; }
         body { 
             display: flex; 
             flex-direction: column; 
-            background: var(--b); 
-            color: var(--w); 
-            font: 16px 'Inter', Arial, sans-serif;
+            background: #0f0f0f; 
+            color: #fff; 
+            font-family: 'Inter', Arial, sans-serif;
         }
 
-        :root { --b: #0f0f0f; --w: #fff; --s: #f5f1ea; --m: 1200px; }
+        :root { --s: #f5f1ea; --m: 1200px; }
 
+        /* Ticker */
         .ticker { height: 60px; background: #000; border: 1px solid #fff; border-left: 0; border-right: 0; display: flex; align-items: center; overflow: hidden; flex-shrink: 0; pointer-events: none; }
         .ticker-track { display: flex; white-space: nowrap; width: max-content; animation: scroll 22s linear infinite; will-change: transform; }
         .ticker-track span { padding-right: 80px; font: 700 24px 'Inter', Arial; text-transform: uppercase; letter-spacing: 1.5px; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        .site-header { padding: 40px 20px; text-align: center; background: var(--b); flex-shrink: 0; }
+        /* Header */
+        .site-header { padding: 40px 20px; text-align: center; background: #0f0f0f; flex-shrink: 0; }
         .header-logo { width: 300px; max-width: 90%; display: block; margin: 0 auto; }
 
+        /* Map */
         .map-container { flex-grow: 1; width: 100%; min-height: 0; }
         .map-container iframe { width: 100%; height: 100%; border: 0; display: block; }
 
+        /* Footer */
         .footer { background: var(--s); color: #000; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
         .footer-inner { max-width: var(--m); margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .footer-nav { display: flex; flex-direction: column; gap: 18px; }
@@ -72,7 +76,7 @@
     </header>
 
     <section class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_LINK" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1782970690502!5m2!1sen!2smy" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </section>
 
     <footer class="footer">
