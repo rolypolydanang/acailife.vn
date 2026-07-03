@@ -27,7 +27,7 @@
             min-height: 100vh;
         }
 
-        /* Top Section: Stays at the top */
+        /* Header stays at the top, does not grow */
         .top-content { flex-shrink: 0; }
         
         .ticker { height: 60px; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; }
@@ -39,11 +39,10 @@
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 400px; }
 
-        /* Map Section: flex-grow: 1 makes it fill the rest of the viewport height */
+        /* Map occupies all remaining space until the viewport bottom */
         .page-wrapper { 
             width: 100%; 
             flex-grow: 1; 
-            min-height: 0; /* Important for flex-grow to work properly with iframes */
             display: flex;
         }
 
@@ -55,7 +54,7 @@
             display: block;
         }
 
-        /* Footer */
+        /* Footer is pushed below the fold */
         .footer { background-color: #f5f1ea; color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
