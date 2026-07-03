@@ -19,18 +19,14 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html, body { 
-            height: 100%; 
-            margin: 0;
+        body { 
             background: var(--bg);
             color: var(--text);
             font-family: 'Inter', Arial, sans-serif;
-            display: flex; 
-            flex-direction: column;
-            padding-top: 60px; /* Space for fixed ticker */
+            /* REMOVED padding-top from body to let everything flow */
         }
 
-        /* Fixed Ticker with duplicated content */
+        /* 1. FIXED TICKER (The only thing that stays) */
         .ticker { 
             position: fixed; top: 0; left: 0; width: 100%; height: 60px; 
             background: #000; border-bottom: 1px solid #fff; 
@@ -40,16 +36,20 @@
         .track span { padding-right: 80px; font-weight: 700; font-size: 24px; text-transform: uppercase; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* Logo area */
-        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 20px; margin: 40px auto; width: 80vw; max-width: 800px; text-decoration: none; }
+        /* 2. SCROLLING LOGO - NO position: fixed */
+        .spacer-for-ticker { height: 60px; } /* Pushes logo below the fixed ticker */
+        .logo-container { 
+            display: flex; flex-direction: column; align-items: center; 
+            gap: 20px; margin: 40px auto; width: 80vw; max-width: 600px; 
+            text-decoration: none;
+        }
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 400px; }
 
-        /* Map area */
-        .page-wrapper { width: 100%; height: calc(100vh - 415px); flex-shrink: 0; }
-        .map { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.9); display: block; }
+        /* 3. PAGE CONTENT */
+        .map { width: 100%; height: 600px; border: none; filter: grayscale(1) invert(0.9); display: block; }
 
-        /* Footer */
+        /* FOOTER */
         .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
@@ -64,8 +64,6 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            .page-wrapper { height: calc(100vh - 290px); }
-            .logo-container { margin: 20px auto; }
             .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
@@ -77,10 +75,12 @@
     <div class="ticker" aria-hidden="true">
         <div class="track">
             <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
-            <!-- Duplicated for seamless loop -->
             <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
         </div>
     </div>
+
+    <!-- Spacer ensures the logo isn't hidden behind the ticker on page load -->
+    <div class="spacer-for-ticker"></div>
 
     <a href="/" class="logo-container">
         <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
