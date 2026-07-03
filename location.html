@@ -27,8 +27,8 @@
             min-height: 100vh;
         }
 
-        /* Ticker & Logo */
-        .header-section { flex-shrink: 0; }
+        /* Top Section: Stays at the top */
+        .top-content { flex-shrink: 0; }
         
         .ticker { height: 60px; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; }
         .track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
@@ -39,11 +39,12 @@
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 400px; }
 
-        /* Fixed Map Logic */
+        /* Map Section: flex-grow: 1 makes it fill the rest of the viewport height */
         .page-wrapper { 
             width: 100%; 
-            flex-grow: 1; /* Fills remaining space */
-            position: relative;
+            flex-grow: 1; 
+            min-height: 0; /* Important for flex-grow to work properly with iframes */
+            display: flex;
         }
 
         .map { 
@@ -78,16 +79,18 @@
 </head>
 <body>
 
-    <div class="ticker" aria-hidden="true">
-        <div class="track">
-            <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
+    <div class="top-content">
+        <div class="ticker" aria-hidden="true">
+            <div class="track">
+                <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
+            </div>
         </div>
-    </div>
 
-    <a href="/" class="logo-container">
-        <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
-        <img src="/images/logo-secondary-location.webp" alt="Acai Life Secondary Logo" class="logo-secondary">
-    </a>
+        <a href="/" class="logo-container">
+            <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
+            <img src="/images/logo-secondary-location.webp" alt="Acai Life Secondary Logo" class="logo-secondary">
+        </a>
+    </div>
  
     <div class="page-wrapper">
         <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.352631558235!2d108.24584287522512!3d15.98664188469335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142109403d16297%3A0x644c10705a6109c3!2sAcai%20Life%20Da%20Nang!5e0!3m2!1sen!2svn!4v1716388435123!5m2!1sen!2svn" allowfullscreen loading="lazy"></iframe>
@@ -110,7 +113,7 @@
                     <a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@acaioi.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://maps.app.goo.gl/your-link-here" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
                 </div>
             </div>
         </div>
