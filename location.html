@@ -13,20 +13,18 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html, body { 
-            height: 100%; 
-            margin: 0;
-            background: #111111;
-        }
+        html { height: 100%; }
 
         body { 
             font: 16px 'Inter', Arial, sans-serif; 
             color: #fff; 
+            background: #111111;
             display: flex; 
-            flex-direction: column;
+            flex-direction: column; 
+            min-height: 100vh;
         }
 
-        /* Header area */
+        /* Header section */
         .top-content { flex-shrink: 0; }
         
         .ticker { height: 60px; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; }
@@ -38,11 +36,11 @@
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 400px; }
 
-        /* The Map: height is 100% of the viewport MINUS the header height (roughly 380px) */
+        /* The Map: Flex-grow 1 fills the remaining height */
         .page-wrapper { 
             width: 100%; 
-            height: calc(100vh - 380px); 
-            flex-shrink: 0;
+            flex-grow: 1; 
+            display: flex;
         }
 
         .map { 
@@ -53,8 +51,15 @@
             display: block;
         }
 
-        /* Footer */
-        .footer { background-color: #f5f1ea; color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
+        /* Footer: Stays pinned to the bottom of the content flow */
+        .footer { 
+            background-color: #f5f1ea; 
+            color: #111111; 
+            padding: 100px 0; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            flex-shrink: 0; 
+        }
         
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
@@ -69,7 +74,6 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            .page-wrapper { height: calc(100vh - 250px); }
             .logo-container { margin: 20px auto; }
             .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
             .f-right { text-align: left; margin: 0; }
