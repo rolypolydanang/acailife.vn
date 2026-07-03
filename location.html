@@ -33,19 +33,26 @@
         .track span { padding-right: 80px; font: 700 24px 'Inter'; text-transform: uppercase; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* LOGO: Exact match for Homepage dimensions */
+        /* LOGO CONTAINER */
         .logo-container { 
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
             margin: 40px auto; 
             width: 80vw; 
             max-width: 800px; 
             z-index: 50; 
             pointer-events: auto;
+            text-decoration: none;
         }
         .logo-container img { 
             width: 100%; 
             display: block; 
             filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); 
+        }
+        .logo-secondary {
+            max-width: 400px;
         }
 
         /* MAP AREA */
@@ -71,7 +78,8 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            .logo-container { width: 90%; max-width: 350px; margin: 30px auto; }
+            .logo-container { width: 90%; max-width: 350px; margin: 30px auto; gap: 15px; }
+            .logo-secondary { max-width: 200px; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
@@ -88,7 +96,8 @@
     </div>
 
     <a href="/" class="logo-container">
-        <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
+        <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
+        <img src="/images/logo-secondary-location.webp" alt="Acai Life Secondary Logo" class="logo-secondary">
     </a>
 
     <div class="page-wrapper">
