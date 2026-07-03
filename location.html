@@ -28,12 +28,12 @@
             height: 100vh;
         }
 
-        /* Non-growing elements */
+        /* Non-growing layout elements */
         .ticker, .logo-container, .footer { 
             flex-shrink: 0; 
         }
 
-        /* The Map Wrapper - The flex: 1 1 auto with min-height: 0 is the fix */
+        /* The Map Wrapper: flex: 1 ensures it fills the void space */
         .page-wrapper { 
             flex: 1 1 auto; 
             min-height: 0; 
