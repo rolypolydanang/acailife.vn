@@ -23,13 +23,13 @@
         .ticker-track span { padding-right: 80px; font: 700 24px 'Inter', Arial; text-transform: uppercase; letter-spacing: 1.5px; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* LOGO - Fixed position to match location.html */
+        /* LOGO - Fixed position to viewport */
         .logo-container { 
             position: fixed; 
             top: 80px; 
             left: 50%; 
             transform: translateX(-50%); 
-            z-index: 90; 
+            z-index: 999; 
             width: 80vw; 
             max-width: 800px; 
             pointer-events: auto;
@@ -73,7 +73,6 @@
         </div>
     </div>
 
-    <!-- Logo is placed here to stay fixed -->
     <a href="/" class="logo-container">
         <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
     </a>
