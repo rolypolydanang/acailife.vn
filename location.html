@@ -24,10 +24,10 @@
             color: #fff; 
             display: flex; 
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 100vh; /* Ensures body is at least full height */
         }
 
-        /* Header stays at the top, does not grow */
+        /* Top Section: Header & Logo */
         .top-content { flex-shrink: 0; }
         
         .ticker { height: 60px; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; }
@@ -39,7 +39,7 @@
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 400px; }
 
-        /* Map occupies all remaining space until the viewport bottom */
+        /* Map wrapper: flex-grow: 1 forces it to fill all empty space */
         .page-wrapper { 
             width: 100%; 
             flex-grow: 1; 
@@ -54,8 +54,16 @@
             display: block;
         }
 
-        /* Footer is pushed below the fold */
-        .footer { background-color: #f5f1ea; color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
+        /* Footer: flex-shrink: 0 keeps it from being squashed */
+        .footer { 
+            background-color: #f5f1ea; 
+            color: #111111; 
+            padding: 100px 0; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            flex-shrink: 0; 
+        }
+        
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
         .footer a { color: inherit; text-decoration: none; }
