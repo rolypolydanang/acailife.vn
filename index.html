@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Removed viewport meta tag to prevent mobile scaling -->
     <title>Acai Life | Authentic Açaí & Healthy Treats</title>
     
     <meta name="description" content="Acai Life Da Nang: Serving authentic Açaí bowls, frozen yogurt, and healthy treats in An Thượng, Ngũ Hành Sơn. Open daily 10am-10pm.">
@@ -26,6 +26,8 @@
             color: var(--text);
             font-family: 'Inter', Arial, sans-serif;
             overflow-x: hidden;
+            /* Ensures a minimum width to prevent collapse on small screens */
+            min-width: 1200px; 
         }
 
         /* 1. FIXED TICKER */
@@ -38,12 +40,11 @@
         .track span { padding-right: 80px; font-weight: 700; font-size: 24px; text-transform: uppercase; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* 2. HERO SECTION - Fixed for Mobile */
+        /* 2. HERO SECTION */
         .spacer { height: 60px; }
         .hero { 
             width: 100%; 
-            height: 100vh;      /* Fallback for older browsers */
-            height: 100svh;     /* Perfect fit for mobile */
+            height: 100vh;
             position: relative; 
             overflow: hidden;
         }
@@ -71,13 +72,6 @@
         .f-social { display: flex; justify-content: flex-end; gap: 28px; margin-top: 30px; }
         .f-social a { font-size: 34px; transition: 0.25s; }
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
-
-        @media(max-width: 768px) {
-            .logo-container { width: 90%; max-width: 350px; top: 30px; }
-            .footer-inner { grid-template-columns: 1fr; gap: 60px; padding: 0 20px; }
-            .f-right { text-align: left; margin: 0; }
-            .f-social { justify-content: flex-start; }
-        }
     </style>
 </head>
 <body>
