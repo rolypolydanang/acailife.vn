@@ -11,11 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        /* Force the page to take full height */
         html, body { 
             height: 100%; 
-            width: 100%;
+            margin: 0; 
+            padding: 0;
+            overflow-x: hidden;
         }
 
         body { 
@@ -23,27 +24,21 @@
             background: #111111; 
             color: #fff; 
             display: flex; 
-            flex-direction: column; 
-            min-height: 100vh;
+            flex-direction: column; /* Stacks header, wrapper, and footer */
         }
 
-        /* TICKER & LOGO */
-        .ticker { height: 60px; background: #111111; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; flex-shrink: 0; }
-        .track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
-        .track span { padding-right: 80px; font: 700 24px 'Inter'; text-transform: uppercase; }
-        @keyframes scroll { to { transform: translateX(-50%); } }
+        /* Elements that should NOT grow */
+        .ticker, .logo-container, .footer { 
+            flex-shrink: 0; 
+        }
 
-        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 20px; margin: 40px auto; width: 80vw; max-width: 800px; text-decoration: none; flex-shrink: 0; }
-        .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
-        .logo-secondary { max-width: 400px; }
-
-        /* MAP AREA: Use flex: 1 to force it to fill the middle space */
+        /* The map wrapper takes all remaining space */
         .page-wrapper { 
-            flex: 1; 
+            flex-grow: 1; 
             width: 100%; 
-            position: relative; /* Container for absolute map */
-            display: flex;
+            position: relative; 
         }
+
         .map { 
             width: 100%; 
             height: 100%; 
@@ -52,8 +47,17 @@
             display: block; 
         }
 
-        /* FOOTER */
-        .footer { background-color: #f5f1ea; color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
+        /* Styling for other elements */
+        .ticker { height: 60px; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; }
+        .track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
+        .track span { padding-right: 80px; font: 700 24px 'Inter'; text-transform: uppercase; }
+        @keyframes scroll { to { transform: translateX(-50%); } }
+
+        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 20px; margin: 40px auto; width: 80vw; max-width: 800px; text-decoration: none; }
+        .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
+        .logo-secondary { max-width: 400px; }
+
+        .footer { background-color: #f5f1ea; color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
         .footer a { color: inherit; text-decoration: none; }
@@ -67,13 +71,10 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            .logo-container { width: 90%; max-width: 350px; margin: 30px auto; gap: 15px; }
-            .logo-secondary { max-width: 200px; }
-            .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
+            .logo-container { margin: 20px auto; }
+            .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
-            /* On mobile, give the map a sensible fixed height if needed */
-            .page-wrapper { flex: none; height: 50vh; }
         }
     </style>
 </head>
