@@ -38,10 +38,10 @@
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 400px; }
 
-        /* Adjusted: Increased from 380px to 430px to make the map ~5% shorter */
+        /* Adjusted: Decreased from 430px to 400px to make the map taller */
         .page-wrapper { 
             width: 100%; 
-            height: calc(100vh - 430px); 
+            height: calc(100vh - 400px); 
             flex-shrink: 0;
         }
 
@@ -69,8 +69,8 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            /* Adjusted: Increased from 250px to 300px for mobile */
-            .page-wrapper { height: calc(100vh - 300px); }
+            /* Adjusted: Decreased from 300px to 275px for mobile */
+            .page-wrapper { height: calc(100vh - 275px); }
             .logo-container { margin: 20px auto; }
             .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
             .f-right { text-align: left; margin: 0; }
