@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acai Life | Authentic Açaí & Healthy Treats</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
         .ticker-track span { padding-right: 80px; font: 700 24px 'Inter', Arial; text-transform: uppercase; letter-spacing: 1.5px; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* LOGO - Fixed position to viewport */
+        /* FIXED LOGO */
         .logo-container { 
             position: fixed; 
             top: 80px; 
@@ -33,6 +33,8 @@
             width: 80vw; 
             max-width: 800px; 
             pointer-events: auto;
+            /* Prevents jittering on mobile while scrolling */
+            will-change: transform; 
         }
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
 
@@ -62,6 +64,57 @@
             .footer-social { justify-content: flex-start; flex-wrap: wrap; }
         }
     </style>
+</head>
+
+<body>
+
+    <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+            <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
+            <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
+        </div>
+    </div>
+
+    <a href="/" class="logo-container">
+        <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
+    </a>
+
+    <section class="hero">
+        <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="Fresh acai bowl served with seasonal fruits" fetchpriority="high" loading="eager">
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <nav class="footer-nav">
+                <a href="#">MENU</a>
+                <a href="location.html">LOCATION</a>
+                <a href="#">ABOUT</a>
+                <a href="#">WHOLESALE</a>
+                <a href="#">BLOG</a>
+            </nav>
+
+            <div class="footer-right">
+                <div class="footer-info">
+                    <a href="/"><h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2></a>
+                    <p>05 AN THƯỢNG 6, BẮC MỸ PHÚ,<br>NGŨ HÀNH SƠN, ĐÀ NẴNG 550000, VIETNAM</p>
+                    <p>MON-SUN: 10:00 - 22:00</p>
+                    <p>
+                        <a href="tel:+84394303001">+84 394 303 001</a><br>
+                        <a href="mailto:acailife.vn@gmail.com">ACAILIFE.VN@GMAIL.COM</a>
+                    </p>
+                </div>
+
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/acailifevn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/acailife.vn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@acaioi.vn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://maps.app.goo.gl/your-map-link" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>    </style>
 </head>
 
 <body>
