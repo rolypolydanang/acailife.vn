@@ -13,30 +13,41 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
+        html, body { 
+            height: 100%; 
+        }
+
         body { 
             font: 16px 'Inter', Arial, sans-serif; 
             background: #111111; 
             color: #fff; 
-            overflow-x: hidden;
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
         }
 
-        /* TICKER */
-        .ticker { height: 60px; background: #111111; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; }
+        /* TICKER & LOGO */
+        .ticker { height: 60px; background: #111111; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; flex-shrink: 0; }
         .track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
         .track span { padding-right: 80px; font: 700 24px 'Inter'; text-transform: uppercase; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* LOGO */
-        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 20px; margin: 40px auto; width: 80vw; max-width: 800px; text-decoration: none; }
+        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 20px; margin: 40px auto; width: 80vw; max-width: 800px; text-decoration: none; flex-shrink: 0; }
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 400px; }
 
-        /* MAP AREA - Forced to viewport height */
-        .page-wrapper { width: 100%; height: 100vh; display: block; }
+        /* MAP AREA: Fixed height logic */
+        .page-wrapper { 
+            flex: 1; 
+            width: 100%; 
+            display: block; 
+            /* This ensures the map doesn't overflow or shrink the footer */
+            min-height: 400px; 
+        }
         .map { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.9); display: block; }
 
         /* FOOTER */
-        .footer { background-color: #f5f1ea; color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
+        .footer { background-color: #f5f1ea; color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
         .footer a { color: inherit; text-decoration: none; }
@@ -62,6 +73,43 @@
 
     <div class="ticker" aria-hidden="true">
         <div class="track">
+            <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
+        </div>
+    </div>
+
+    <a href="/" class="logo-container">
+        <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
+        <img src="/images/logo-secondary-location.webp" alt="Acai Life Secondary Logo" class="logo-secondary">
+    </a>
+
+    <div class="page-wrapper">
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1782971630363!5m2!1sen!2smy" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <nav class="nav">
+                <a href="#">MENU</a><a href="location.html">LOCATION</a><a href="#">ABOUT</a><a href="#">WHOLESALE</a><a href="#">BLOG</a>
+            </nav>
+            <div class="f-right">
+                <div class="f-info">
+                    <a href="/"><h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2></a>
+                    <p>05 AN THƯỢNG 6, BẮC MỸ PHÚ,<br>NGŨ HÀNH SƠN, ĐÀ NẴNG 550000, VIETNAM</p>
+                    <p>MON-SUN: 10:00 - 22:00</p>
+                    <p><a href="tel:+84394303001">+84 394 303 001</a><br>
+                    <a href="mailto:acailife.vn@gmail.com">ACAILIFE.VN@GMAIL.COM</a></p>
+                </div>
+                <div class="f-social">
+                    <a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@acaioi.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>        <div class="track">
             <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
         </div>
     </div>
