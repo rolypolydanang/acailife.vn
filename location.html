@@ -18,8 +18,10 @@
             font: 16px 'Inter', Arial, sans-serif; 
             background: #111111; 
             color: #fff; 
-            overflow-x: hidden; 
-            padding-top: 60px; 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
         }
 
         /* TICKER */
@@ -42,7 +44,6 @@
             margin: 40px auto; 
             width: 80vw; 
             max-width: 800px; 
-            z-index: 50; 
             pointer-events: auto;
             text-decoration: none;
         }
@@ -51,17 +52,13 @@
             display: block; 
             filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); 
         }
-        .logo-secondary {
-            max-width: 400px;
-        }
+        .logo-secondary { max-width: 400px; }
 
-        /* MAP AREA - FULL HEIGHT TO BOTTOM */
+        /* MAP AREA - FLEX GROW FILLS REMAINING SPACE */
         .page-wrapper { 
+            flex-grow: 1; 
             width: 100%; 
-            height: calc(100vh - 60px); 
-            margin: 0; 
-            padding: 0; 
-            display: block; 
+            display: block;
         }
         .map { 
             width: 100%; 
@@ -71,8 +68,8 @@
             display: block; 
         }
 
-        /* FOOTER */
-        .footer { background-color: #f5f1ea; color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
+        /* FOOTER - Shrink-to-fit content */
+        .footer { background-color: #f5f1ea; color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
         .footer a { color: inherit; text-decoration: none; }
@@ -88,11 +85,10 @@
         @media(max-width: 768px) {
             .logo-container { width: 90%; max-width: 350px; margin: 30px auto; gap: 15px; }
             .logo-secondary { max-width: 200px; }
+            .page-wrapper { height: 300px; } /* Fixed height for map on mobile */
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
-            /* Reset wrapper height on mobile if desired, or keep for full-screen map */
-            .page-wrapper { height: 50vh; }
         }
     </style>
 </head>
@@ -136,6 +132,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
