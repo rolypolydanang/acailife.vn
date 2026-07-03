@@ -33,13 +33,14 @@
         .track span { padding-right: 80px; font: 700 24px 'Inter'; text-transform: uppercase; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* LOGO: Matches homepage scrolling behavior */
+        /* LOGO: Exact match for Homepage dimensions */
         .logo-container { 
             display: block;
             margin: 40px auto; 
             width: 80vw; 
-            max-width: 600px; 
-            text-align: center;
+            max-width: 800px; 
+            z-index: 50; 
+            pointer-events: auto;
         }
         .logo-container img { 
             width: 100%; 
@@ -70,7 +71,7 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            .logo-container { width: 90%; max-width: 300px; margin: 40px auto; }
+            .logo-container { width: 90%; max-width: 350px; margin: 30px auto; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
@@ -86,7 +87,6 @@
         </div>
     </div>
 
-    <!-- This logo now scrolls with the page, just like the homepage -->
     <a href="/" class="logo-container">
         <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
     </a>
