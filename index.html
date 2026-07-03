@@ -11,35 +11,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <style>
-        /* RESET */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font: 16px 'Inter', Arial, sans-serif; background: #111111; color: #fff; overflow-x: hidden; }
 
-        /* TICKER - Fixed at 60px height */
-        .ticker { position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: #111111; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; z-index: 100; pointer-events: none; }
+        /* TICKER */
+        .ticker { position: fixed; top: 0; width: 100%; height: 60px; background: #111111; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; z-index: 100; pointer-events: none; }
         .track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
         .track span { padding-right: 80px; font: 700 24px 'Inter'; text-transform: uppercase; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* HERO - Force start at 60px to meet ticker bottom */
-        .hero { position: relative; width: 100%; height: calc(100vh - 60px); margin-top: 60px; overflow: hidden; }
-        .hero-bg { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-
-        /* LOGO - Positioned inside hero, scrolls with the page */
+        /* LOGO - Fixed position to match location page exactly */
         .logo-container { 
-            position: absolute; 
-            top: 40px; 
+            position: fixed; 
+            top: 80px; 
             left: 50%; 
             transform: translateX(-50%); 
-            z-index: 50; 
+            z-index: 90; 
             width: 80vw; 
             max-width: 800px; 
             pointer-events: auto;
         }
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
 
+        /* HERO - No padding-top, image starts at the top */
+        .hero { width: 100%; height: 100vh; }
+        .hero-bg { width: 100%; height: 100%; object-fit: cover; }
+
         /* FOOTER */
-        .footer { background-color: #f5f1ea !important; color: #111111 !important; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
+        .footer { background-color: #f5f1ea !important; color: #111111 !important; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 50; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
         .footer a { color: inherit; text-decoration: none; }
@@ -53,27 +52,26 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            .logo-container { width: 90% !important; max-width: 350px !important; top: 30px; }
+            .logo-container { width: 90% !important; max-width: 350px !important; top: 80px; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
         }
     </style>
 </head>
-
 <body>
-
     <div class="ticker" aria-hidden="true">
         <div class="track">
             <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
         </div>
     </div>
 
+    <a href="/" class="logo-container">
+        <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
+    </a>
+
     <section class="hero">
-        <a href="/" class="logo-container">
-            <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
-        </a>
-        <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="Fresh acai bowl" fetchpriority="high">
+        <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="Fresh acai bowl">
     </section>
 
     <footer class="footer">
@@ -98,6 +96,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
