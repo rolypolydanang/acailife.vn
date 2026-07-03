@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <style>
+        /* 1. Reset and Full Height Setup */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html, body { 
@@ -24,10 +25,10 @@
             color: #fff; 
             display: flex; 
             flex-direction: column;
-            min-height: 100vh; /* Ensures body is at least full height */
+            min-height: 100vh;
         }
 
-        /* Top Section: Header & Logo */
+        /* 2. Header Section (Stays at the top) */
         .top-content { flex-shrink: 0; }
         
         .ticker { height: 60px; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; }
@@ -39,11 +40,13 @@
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 400px; }
 
-        /* Map wrapper: flex-grow: 1 forces it to fill all empty space */
+        /* 3. The Map Section (The "Grower") */
+        /* flex: 1 tells this div to take up ALL available space */
         .page-wrapper { 
             width: 100%; 
-            flex-grow: 1; 
+            flex: 1; 
             display: flex;
+            position: relative;
         }
 
         .map { 
@@ -54,7 +57,7 @@
             display: block;
         }
 
-        /* Footer: flex-shrink: 0 keeps it from being squashed */
+        /* 4. Footer (Stays at the bottom, scrolls into view) */
         .footer { 
             background-color: #f5f1ea; 
             color: #111111; 
