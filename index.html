@@ -4,37 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Acai Life | Authentic Açaí & Healthy Treats</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font: 16px 'Inter', Arial, sans-serif; background: #111111; color: #fff; overflow-x: hidden; }
 
-        /* TICKER */
+        /* TICKER - Fixed */
         .ticker { position: fixed; top: 0; width: 100%; height: 60px; background: #111111; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; z-index: 100; pointer-events: none; }
         .track { display: flex; white-space: nowrap; animation: scroll 22s linear infinite; }
         .track span { padding-right: 80px; font: 700 24px 'Inter'; text-transform: uppercase; }
         @keyframes scroll { to { transform: translateX(-50%); } }
 
-        /* LOGO - Fixed position to match location page exactly */
+        /* LOGO - Scrolls with the page. Matching location page margin/width */
         .logo-container { 
-            position: fixed; 
-            top: 80px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            z-index: 90; 
+            display: block;
+            margin: 80px auto 40px auto; /* 80px top margin matches your location page top */
             width: 80vw; 
             max-width: 800px; 
+            text-align: center;
+            z-index: 90; 
             pointer-events: auto;
         }
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
 
-        /* HERO - No padding-top, image starts at the top */
-        .hero { width: 100%; height: 100vh; }
+        /* HERO - No extra padding needed now that logo is in flow */
+        .hero { width: 100%; height: 100svh; }
         .hero-bg { width: 100%; height: 100%; object-fit: cover; }
 
         /* FOOTER */
@@ -52,7 +47,7 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            .logo-container { width: 90% !important; max-width: 350px !important; top: 80px; }
+            .logo-container { margin: 80px auto 40px auto; width: 90% !important; max-width: 350px !important; }
             .footer-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 60px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
