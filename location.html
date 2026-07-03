@@ -38,7 +38,7 @@
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 400px; }
 
-        /* Adjusted: Increased to 415px to shrink the map height slightly */
+        /* Map area - height adjusted to fit perfectly */
         .page-wrapper { 
             width: 100%; 
             height: calc(100vh - 415px); 
@@ -69,7 +69,6 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            /* Adjusted: Increased to 290px for mobile */
             .page-wrapper { height: calc(100vh - 290px); }
             .logo-container { margin: 20px auto; }
             .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
@@ -94,7 +93,13 @@
     </div>
  
     <div class="page-wrapper">
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.352631558235!2d108.24584287522512!3d15.98664188469335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142109403d16297%3A0x644c10705a6109c3!2sAcai%20Life%20Da%20Nang!5e0!3m2!1sen!2svn!4v1716388435123!5m2!1sen!2svn" allowfullscreen loading="lazy"></iframe>
+        <iframe class="map" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7668.640408673318!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783067883821!5m2!1sen!2smy" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
     </div>
 
     <footer class="footer">
