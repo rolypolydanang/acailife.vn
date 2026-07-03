@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Acai Life | Authentic Açaí & Healthy Treats</title>
+    
+    <meta name="description" content="Acai Life Da Nang: Serving authentic Açaí bowls, frozen yogurt, and healthy treats in An Thượng, Ngũ Hành Sơn. Open daily 10am-10pm.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,13 +38,23 @@
         .track span { padding-right: 80px; font-weight: 700; font-size: 24px; text-transform: uppercase; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* 2. HERO SECTION */
+        /* 2. HERO SECTION - Fixed for Mobile */
         .spacer { height: 60px; }
-        .hero { width: 100%; height: calc(100vh - 60px); position: relative; }
-        .hero-bg { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+        .hero { 
+            width: 100%; 
+            height: 100vh;      /* Fallback for older browsers */
+            height: 100svh;     /* Perfect fit for mobile */
+            position: relative; 
+            overflow: hidden;
+        }
+        .hero-bg { 
+            width: 100%; height: 100%; 
+            object-fit: cover; object-position: center; 
+            display: block; 
+        }
         .logo-container { 
             position: absolute; top: 40px; left: 50%; transform: translateX(-50%); 
-            z-index: 50; width: 80vw; max-width: 800px; pointer-events: auto;
+            z-index: 50; width: 80vw; max-width: 800px; 
         }
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
 
@@ -81,7 +93,7 @@
 
     <section class="hero">
         <a href="/" class="logo-container">
-            <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo">
+            <img src="/images/acai-life-logo-hero.webp" alt="Acai Life Logo">
         </a>
         <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="Fresh acai bowl" fetchpriority="high">
     </section>
