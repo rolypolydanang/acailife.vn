@@ -39,11 +39,10 @@
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 400px; }
 
-        /* The Map: Force a large minimum height to fix the 'too small' issue */
+        /* Fixed Map Logic */
         .page-wrapper { 
             width: 100%; 
-            height: 600px; /* Force larger height */
-            flex-grow: 1;
+            flex-grow: 1; /* Fills remaining space */
             position: relative;
         }
 
@@ -52,7 +51,7 @@
             height: 100%; 
             border: none; 
             filter: grayscale(1) invert(0.9); 
-            display: block; 
+            display: block;
         }
 
         /* Footer */
@@ -70,7 +69,6 @@
         .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            .page-wrapper { height: 400px; } /* Mobile adjustment */
             .logo-container { margin: 20px auto; }
             .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
             .f-right { text-align: left; margin: 0; }
@@ -92,7 +90,7 @@
     </a>
  
     <div class="page-wrapper">
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1782971630363!5m2!1sen!2smy" allowfullscreen loading="lazy"></iframe>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.352631558235!2d108.24584287522512!3d15.98664188469335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142109403d16297%3A0x644c10705a6109c3!2sAcai%20Life%20Da%20Nang!5e0!3m2!1sen!2svn!4v1716388435123!5m2!1sen!2svn" allowfullscreen loading="lazy"></iframe>
     </div>
 
     <footer class="footer">
@@ -102,7 +100,7 @@
             </nav>
             <div class="f-right">
                 <div class="f-info">
-                    <a href="/"><h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2></h2></a>
+                    <a href="/"><h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2></a>
                     <p>05 AN THƯỢNG 6, BẮC MỸ PHÚ,<br>NGŨ HÀNH SƠN, ĐÀ NẴNG 550000, VIETNAM</p>
                     <p>MON-SUN: 10:00 - 22:00</p>
                     <p><a href="tel:+84394303001">+84 394 303 001</a><br>
@@ -112,7 +110,7 @@
                     <a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@acaioi.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                    <a href="https://maps.app.goo.gl/your-link-here" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
                 </div>
             </div>
         </div>
