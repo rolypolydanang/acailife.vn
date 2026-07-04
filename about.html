@@ -15,6 +15,7 @@
             --bg: #111111;
             --text: #ffffff;
             --accent: #f5f1ea;
+            --font-main: 'Inter', Arial, sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,14 +23,14 @@
         body { 
             background: var(--bg);
             color: var(--text);
-            font-family: 'Inter', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: var(--font-main);
+            line-height: 1.8;
         }
 
         /* 1. FIXED TICKER */
         .ticker { 
             position: fixed; top: 0; left: 0; width: 100%; height: 60px; 
-            background: #000; border-bottom: 1px solid #fff; 
+            background: #000; border-bottom: 1px solid #333; 
             display: flex; align-items: center; overflow: hidden; z-index: 1000;
         }
         .track { display: flex; white-space: nowrap; animation: scroll 20s linear infinite; }
@@ -40,7 +41,7 @@
         .spacer-for-ticker { height: 60px; }
         .logo-container { 
             display: flex; flex-direction: column; align-items: center; 
-            gap: 30px; margin: 40px auto; 
+            gap: 30px; margin: 60px auto; 
             width: 80vw; max-width: 800px; 
             text-decoration: none;
         }
@@ -51,12 +52,27 @@
         .about-content { 
             width: 80vw; 
             max-width: 800px; 
-            margin: 40px auto 100px; 
-            color: #ccc;
+            margin: 0 auto 120px; 
+            color: #d1d1d1;
         }
-        .about-content h1 { color: #fff; margin-bottom: 30px; font-size: 32px; text-transform: uppercase; letter-spacing: 1px; }
-        .about-content h2 { color: #fff; margin: 40px 0 20px; font-size: 24px; }
-        .about-content p { margin-bottom: 20px; font-size: 18px; }
+        .about-content h1 { 
+            font-family: var(--font-main);
+            font-weight: 700;
+            color: #fff; 
+            margin-bottom: 40px; 
+            font-size: clamp(28px, 5vw, 48px); 
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .about-content h2 { 
+            font-family: var(--font-main);
+            font-weight: 700;
+            color: #fff; 
+            margin: 50px 0 20px; 
+            font-size: 24px; 
+            text-transform: uppercase;
+        }
+        .about-content p { margin-bottom: 25px; font-size: 18px; }
 
         /* FOOTER */
         .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
@@ -98,7 +114,7 @@
     </a>
  
     <main class="about-content">
-        <h1>The Real Deal: Vietnam's First Premium Açaí Experience</h1>
+        <h1>The Real Deal: Da Nang's First Premium Acai Bowl Experience</h1>
         <p>Most smoothie bowls in Vietnam are made by blending fruit. A true açaí bowl is different.</p>
         <p>Born in Brazil in the late 1970s and 1980s, the original açaí bowl is made with authentic Brazilian açaí—not fruit substitutes. At Acai Life, we're proud to bring that genuine experience to Da Nang using premium açaí imported directly from Brazil.</p>
 
@@ -128,7 +144,7 @@
                 <div class="f-social">
                     <a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@acaioi.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.tiktok.com/@acailife.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
                     <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
                 </div>
             </div>
