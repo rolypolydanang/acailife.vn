@@ -23,6 +23,7 @@
             background: var(--bg);
             color: var(--text);
             font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
         }
 
         /* 1. FIXED TICKER */
@@ -46,19 +47,16 @@
         .logo-main { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 300px; width: 100%; display: block; }
 
-        /* 3. CONTENT AREA (Replaced map with this) */
-        .content-placeholder { 
+        /* 3. ABOUT CONTENT */
+        .about-content { 
             width: 80vw; 
             max-width: 800px; 
-            margin: 40px auto 80px; 
-            min-height: 400px; 
-            background: #1a1a1a; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            border: 1px solid #333;
-            color: #666;
+            margin: 40px auto 100px; 
+            color: #ccc;
         }
+        .about-content h1 { color: #fff; margin-bottom: 30px; font-size: 32px; text-transform: uppercase; letter-spacing: 1px; }
+        .about-content h2 { color: #fff; margin: 40px 0 20px; font-size: 24px; }
+        .about-content p { margin-bottom: 20px; font-size: 18px; }
 
         /* FOOTER */
         .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
@@ -76,7 +74,7 @@
 
         @media(max-width: 768px) {
             .logo-container { width: 90%; }
-            .content-placeholder { width: 90%; min-height: 300px; }
+            .about-content { width: 90%; }
             .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
@@ -99,8 +97,19 @@
         <img src="/images/logo-secondary-about.webp" alt="Acai Life About" class="logo-secondary">
     </a>
  
-    <main class="content-placeholder">
-        <p>ABOUT CONTENT AREA</p>
+    <main class="about-content">
+        <h1>The Real Deal: Vietnam's First Premium Açaí Experience</h1>
+        <p>Most smoothie bowls in Vietnam are made by blending fruit. A true açaí bowl is different.</p>
+        <p>Born in Brazil in the late 1970s and 1980s, the original açaí bowl is made with authentic Brazilian açaí—not fruit substitutes. At Acai Life, we're proud to bring that genuine experience to Da Nang using premium açaí imported directly from Brazil.</p>
+
+        <h2>Why We're Different</h2>
+        <p>We use real Brazilian açaí, known for its rich flavor, velvety texture, and exceptional nutritional value. Every bowl is finished with fresh, locally sourced fruit and carefully selected superfoods, creating an authentic experience inspired by Brazil and crafted in Vietnam.</p>
+
+        <h2>Fuel for Your Life</h2>
+        <p>Whether you need a nourishing breakfast, post-workout recovery, an energizing meal, or a healthy dessert, our bowls are made to fuel your day. Naturally rich in antioxidants, fiber, and healthy fats, premium açaí delivers lasting energy while tasting incredible.</p>
+
+        <p>Every ingredient has been chosen with care to create a bowl that's both authentic and delicious.</p>
+        <p><strong>Experience the difference that real Brazilian açaí makes.</strong></p>
     </main>
 
     <footer class="footer">
@@ -120,7 +129,7 @@
                     <a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@acaioi.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
                 </div>
             </div>
         </div>
