@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About | Acai Life</title>
-     
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -25,6 +25,7 @@
             color: var(--text);
             font-family: var(--font-main);
             line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* 1. FIXED TICKER */
@@ -40,60 +41,47 @@
         /* 2. LOGO SECTION */
         .spacer-for-ticker { height: 60px; }
         .logo-container { 
-            display: flex; flex-direction: column; align-items: center; 
-            gap: 30px; 
-            margin: 40px auto; /* Aligned to match Location page */
-            width: 80vw; max-width: 800px; 
-            text-decoration: none;
+            display: flex; flex-direction: column; align-items: center; gap: 30px; 
+            margin: 40px auto; width: 80vw; max-width: 800px; text-decoration: none;
         }
         .logo-main { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 300px; width: 100%; display: block; }
 
         /* 3. ABOUT CONTENT */
         .about-content { 
-            width: 80vw; 
-            max-width: 800px; 
-            margin: 0 auto 120px; 
-            color: #d1d1d1;
+            width: 80vw; max-width: 800px; margin: 0 auto 120px; color: #d1d1d1;
+            font-family: var(--font-main); /* Explicitly set for content */
         }
-        .about-content h1 { 
+        .about-content h1, .about-content h2 { 
             font-family: var(--font-main);
             font-weight: 700;
-            color: var(--accent); /* Matches footer accent */
-            margin-bottom: 40px; 
-            font-size: clamp(28px, 5vw, 48px); 
-            line-height: 1.2;
+            color: var(--accent);
             text-transform: uppercase;
         }
-        .about-content h2 { 
-            font-family: var(--font-main);
-            font-weight: 700;
-            color: var(--accent); /* Matches footer accent */
-            margin: 50px 0 20px; 
-            font-size: 24px; 
-            text-transform: uppercase;
-        }
+        .about-content h1 { margin-bottom: 40px; font-size: clamp(28px, 5vw, 48px); line-height: 1.2; }
+        .about-content h2 { margin: 50px 0 20px; font-size: 24px; }
         .about-content p { margin-bottom: 25px; font-size: 18px; }
+        
+        .feature-list { list-style: none; margin-bottom: 30px; }
+        .feature-list li { margin-bottom: 15px; font-size: 18px; }
+        .brand-promise { margin-top: 30px; font-style: italic; color: var(--accent); font-size: 20px; }
 
         /* FOOTER */
         .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
         .footer a { color: inherit; text-decoration: none; }
-        .nav a { font: 700 28px 'Inter'; }
-        .nav a:hover { opacity: .5; }
-        .f-right { max-width: 420px; margin-left: auto; text-align: right; display: flex; flex-direction: column; justify-content: space-between; }
+        .nav a { font: 700 28px var(--font-main); }
+        .f-right { max-width: 420px; margin-left: auto; text-align: right; }
         .f-info h2 { font-size: 20px; margin-bottom: 18px; }
         .f-info p { font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
         .f-social { display: flex; justify-content: flex-end; gap: 28px; margin-top: 30px; }
-        .f-social a { font-size: 34px; transition: 0.25s; }
-        .f-social a:hover { transform: translateY(-3px); opacity: .5; }
+        .f-social a { font-size: 34px; }
 
         @media(max-width: 768px) {
-            .logo-container { width: 90%; }
-            .about-content { width: 90%; }
+            .logo-container, .about-content { width: 90%; }
             .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
-            .f-right { text-align: left; margin: 0; }
+            .f-right { text-align: left; }
             .f-social { justify-content: flex-start; }
         }
     </style>
@@ -102,8 +90,8 @@
 
     <div class="ticker" aria-hidden="true">
         <div class="track">
-            <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
-            <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
+            <span>AUTHENTIC ACAI</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
+            <span>AUTHENTIC ACAI</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
         </div>
     </div>
 
@@ -115,18 +103,32 @@
     </a>
  
     <main class="about-content">
-        <h1>First Premium Acai Bowl in Da Nang</h1>
-        <p>Most smoothie bowls in Vietnam are made by blending fruit. A true açaí bowl is different.</p>
-        <p>Born in Brazil in the late 1970s and 1980s, the original açaí bowl is made with authentic Brazilian açaí—not fruit substitutes. At Acai Life, we're proud to bring that genuine experience to Da Nang using premium açaí imported directly from Brazil.</p>
+        <header class="hero-section">
+            <h1>First Premium Acai in Da Nang</h1>
+            <p class="lead">Most smoothie bowls in Vietnam rely on frozen fruit substitutes. We choose to define the original experience by importing 100% authentic Brazilian acai.</p>
+        </header>
 
-        <h2>Why We Make The Best Acai Bowls</h2>
-        <p>We use real Brazilian açaí, known for its rich flavor, velvety texture, and exceptional nutritional value. Every bowl is finished with fresh, locally sourced fruit and carefully selected superfoods, creating an authentic experience inspired by Brazil and crafted in Vietnam.</p>
+        <section class="brand-origin">
+            <h2>The Brazilian Standard</h2>
+            <p>Born in 1970s Brazil, the true acai bowl is defined by its origin. At <strong>ACAI LIFE</strong>, we refuse to use fillers or shortcuts. We import premium, authentic Brazilian acai directly to Da Nang, preserving the rich, earth-grown integrity of the harvest.</p>
+        </section>
 
-        <h2>Fuel for Your Life</h2>
-        <p>Whether you need a nourishing breakfast, post-workout recovery, an energizing meal, or a healthy dessert, our bowls are made to fuel your day. Naturally rich in antioxidants, fiber, and healthy fats, premium açaí delivers lasting energy while tasting incredible.</p>
+        <section class="craft-quality">
+            <h2>Why We Are Different</h2>
+            <ul class="feature-list">
+                <li><strong>Authentic Base:</strong> Rich flavor and a signature velvety texture that only real acai provides.</li>
+                <li><strong>Local Artistry:</strong> Finished with vibrant, locally-sourced Vietnamese harvests and curated superfoods.</li>
+                <li><strong>Nutritional Integrity:</strong> Naturally packed with antioxidants, fiber, and healthy fats—fuel that actually lasts.</li>
+            </ul>
+        </section>
 
-        <p>Every ingredient has been chosen with care to create a bowl that's both authentic and delicious.</p>
-        <p><strong>Experience the difference that real Brazilian açaí makes.</strong></p>
+        <section class="lifestyle-fuel">
+            <h2>Fuel for Your Life</h2>
+            <p>Whether it’s a morning reset, post-workout recovery, or a moment of indulgence, our bowls are crafted to power your day without compromise.</p>
+            <blockquote class="brand-promise">
+                <strong>Experience the difference that real Brazilian acai makes at ACAI LIFE.</strong>
+            </blockquote>
+        </section>
     </main>
 
     <footer class="footer">
