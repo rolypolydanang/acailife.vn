@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About | Acai Life</title>
+    <title>Location | Acai Life</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+ 
     <style>
         :root {
             --bg: #111111;
             --text: #ffffff;
             --accent: #f5f1ea;
-            --font-main: 'Inter', Arial, sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,14 +22,13 @@
         body { 
             background: var(--bg);
             color: var(--text);
-            font-family: var(--font-main);
-            line-height: 1.8;
+            font-family: 'Inter', Arial, sans-serif;
         }
 
         /* 1. FIXED TICKER */
         .ticker { 
             position: fixed; top: 0; left: 0; width: 100%; height: 60px; 
-            background: #000; border-bottom: 1px solid #333; 
+            background: #000; border-bottom: 1px solid #fff; 
             display: flex; align-items: center; overflow: hidden; z-index: 1000;
         }
         .track { display: flex; white-space: nowrap; animation: scroll 20s linear infinite; }
@@ -41,38 +39,23 @@
         .spacer-for-ticker { height: 60px; }
         .logo-container { 
             display: flex; flex-direction: column; align-items: center; 
-            gap: 30px; margin: 60px auto; 
+            gap: 30px; margin: 40px auto; 
             width: 80vw; max-width: 800px; 
             text-decoration: none;
         }
-        .logo-main { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
-        .logo-secondary { max-width: 300px; width: 100%; display: block; }
+        .logo-main { 
+            width: 100%; 
+            display: block; 
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); 
+        }
+        .logo-secondary { 
+            max-width: 300px; 
+            width: 100%;
+            display: block;
+        }
 
-        /* 3. ABOUT CONTENT */
-        .about-content { 
-            width: 80vw; 
-            max-width: 800px; 
-            margin: 0 auto 120px; 
-            color: #d1d1d1;
-        }
-        .about-content h1 { 
-            font-family: var(--font-main);
-            font-weight: 700;
-            color: #fff; 
-            margin-bottom: 40px; 
-            font-size: clamp(28px, 5vw, 48px); 
-            line-height: 1.2;
-            text-transform: uppercase;
-        }
-        .about-content h2 { 
-            font-family: var(--font-main);
-            font-weight: 700;
-            color: #fff; 
-            margin: 50px 0 20px; 
-            font-size: 24px; 
-            text-transform: uppercase;
-        }
-        .about-content p { margin-bottom: 25px; font-size: 18px; }
+        /* 3. MAP - Height set to 564px (1% shorter than 570px) */
+        .map { width: 100%; height: 564px; border: none; filter: grayscale(1) invert(0.9); display: block; }
 
         /* FOOTER */
         .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
@@ -90,10 +73,10 @@
 
         @media(max-width: 768px) {
             .logo-container { width: 90%; }
-            .about-content { width: 90%; }
             .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
+            .map { height: 400px; }
         }
     </style>
 </head>
@@ -110,28 +93,22 @@
 
     <a href="/" class="logo-container">
         <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
-        <img src="/images/logo-secondary-about.webp" alt="Acai Life About" class="logo-secondary">
+        <img src="/images/logo-secondary-location.webp" alt="Acai Life Location Detail" class="logo-secondary">
     </a>
  
-    <main class="about-content">
-        <h1>The Real Deal: Da Nang's First Premium Acai Bowl Experience</h1>
-        <p>Most smoothie bowls in Vietnam are made by blending fruit. A true açaí bowl is different.</p>
-        <p>Born in Brazil in the late 1970s and 1980s, the original açaí bowl is made with authentic Brazilian açaí—not fruit substitutes. At Acai Life, we're proud to bring that genuine experience to Da Nang using premium açaí imported directly from Brazil.</p>
-
-        <h2>Why We're Different</h2>
-        <p>We use real Brazilian açaí, known for its rich flavor, velvety texture, and exceptional nutritional value. Every bowl is finished with fresh, locally sourced fruit and carefully selected superfoods, creating an authentic experience inspired by Brazil and crafted in Vietnam.</p>
-
-        <h2>Fuel for Your Life</h2>
-        <p>Whether you need a nourishing breakfast, post-workout recovery, an energizing meal, or a healthy dessert, our bowls are made to fuel your day. Naturally rich in antioxidants, fiber, and healthy fats, premium açaí delivers lasting energy while tasting incredible.</p>
-
-        <p>Every ingredient has been chosen with care to create a bowl that's both authentic and delicious.</p>
-        <p><strong>Experience the difference that real Brazilian açaí makes.</strong></p>
-    </main>
+    <div class="page-wrapper">
+        <iframe class="map" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7668.640408673318!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783067883821!5m2!1sen!2smy" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+    </div>
 
     <footer class="footer">
         <div class="footer-inner">
             <nav class="nav">
-                <a href="#">MENU</a><a href="location.html">LOCATION</a><a href="#">ABOUT</a><a href="#">WHOLESALE</a><a href="#">BLOG</a>
+                <a href="#">MENU</a><a href="location.html">LOCATION</a><a href="about.html">ABOUT</a><a href="#">WHOLESALE</a><a href="#">BLOG</a>
             </nav>
             <div class="f-right">
                 <div class="f-info">
