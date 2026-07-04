@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About | Acai Life</title>
-     
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
- 
+
     <style>
         :root {
             --bg: #111111;
@@ -43,13 +43,18 @@
         .logo-container { 
             display: flex; flex-direction: column; align-items: center; gap: 30px; 
             margin: 40px auto; width: 80vw; max-width: 800px; text-decoration: none;
+            transition: opacity 0.3s ease;
         }
+        .logo-container:hover { opacity: 0.8; }
         .logo-main { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 300px; width: 100%; display: block; }
 
         /* 3. ABOUT CONTENT */
         .about-content { 
-            width: 80vw; max-width: 800px; margin: 0 auto 120px; color: #d1d1d1;
+            width: 80vw; 
+            max-width: 800px; 
+            margin: 40px auto 120px; 
+            color: #d1d1d1;
             font-family: var(--font-main);
         }
         .about-content h1, .about-content h2 { 
@@ -71,18 +76,20 @@
         .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .nav { display: flex; flex-direction: column; gap: 18px; }
-        .footer a { color: inherit; text-decoration: none; }
+        .footer a { color: inherit; text-decoration: none; transition: opacity 0.3s ease; }
         .nav a { font: 700 28px var(--font-main); }
+        .nav a:hover { opacity: .5; }
         .f-right { max-width: 420px; margin-left: auto; text-align: right; }
         .f-info h2 { font-size: 20px; margin-bottom: 18px; }
         .f-info p { font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
         .f-social { display: flex; justify-content: flex-end; gap: 28px; margin-top: 30px; }
-        .f-social a { font-size: 34px; }
+        .f-social a { font-size: 34px; transition: 0.25s; }
+        .f-social a:hover { transform: translateY(-3px); opacity: .5; }
 
         @media(max-width: 768px) {
-            .logo-container, .about-content { width: 90%; }
+            .logo-container, .about-content { width: 90%; margin-left: auto; margin-right: auto; text-align: left; }
             .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
-            .f-right { text-align: left; }
+            .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
         }
     </style>
