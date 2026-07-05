@@ -6,99 +6,47 @@
     <title>Location | Acai Life</title>
     
     <link rel="icon" type="image/png" href="/images/favicon.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     
     <style>
-        :root {
-            --bg: #111111;
-            --text: #ffffff;
-            --accent: #f5f1ea;
-        }
-
-        /* 1. Smooth Scroll */
-        html { scroll-behavior: smooth; }
-
+        :root { --bg: #111111; --text: #ffffff; --accent: #f5f1ea; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', Arial, sans-serif;
-            overflow-x: hidden;
-            animation: fadeIn 0.8s ease-in;
+            background: var(--bg); color: var(--text); 
+            font-family: 'Inter', Arial, sans-serif; overflow-x: hidden; 
         }
 
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        /* 4. Ticker Robustness */
-        @media (prefers-reduced-motion: reduce) {
-            .track { animation: none !important; }
-        }
-
-        .ticker { 
-            position: fixed; top: 0; left: 0; width: 100%; height: 60px; 
-            background: #000; border-bottom: 1px solid #fff; 
-            display: flex; align-items: center; overflow: hidden; z-index: 1000;
-        }
-        .track { 
-            display: flex; white-space: nowrap; animation: scroll 20s linear infinite;
-            will-change: transform;
-        }
+        /* 1. TICKER */
+        .ticker { position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: #000; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; z-index: 1000; }
+        .track { display: flex; white-space: nowrap; animation: scroll 20s linear infinite; }
         .track span { padding-right: 80px; font-weight: 700; font-size: 24px; text-transform: uppercase; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* 2. Content & Map */
-        /* Desktop Default */
-        .page-wrapper { 
-            margin-top: calc(60px + 3vh); 
-            padding-top: 1vh; 
-            width: 100%; 
-        }
-        
-        .logo-container { 
-            display: flex; flex-direction: column; align-items: center; 
-            gap: 30px; margin: 0 auto 60px auto; 
-            width: 80vw; max-width: 800px; 
-            text-decoration: none;
-        }
+        /* 2. MAIN CONTENT */
+        .page-wrapper { margin-top: 60px; padding: 40px 0; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-bottom: 60px; width: 80vw; max-width: 800px; text-decoration: none; }
         .logo-main { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 300px; width: 100%; display: block; }
+        .map-container { width: 100%; aspect-ratio: 16 / 9; max-height: 500px; }
+        .map { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.9); }
 
-        .map-container { 
-            width: 100%; aspect-ratio: 16 / 9; max-height: 564px; pointer-events: auto; 
-        }
-        .map { 
-            width: 100%; height: 100%; border: none; 
-            filter: grayscale(1) invert(0.9); display: block; 
-        }
-
-        /* Footer */
-        .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
-        .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        /* 3. UNIFIED FOOTER */
+        .footer { background-color: var(--accent); color: #111111; padding: 80px 0; text-transform: uppercase; letter-spacing: 1px; width: 100%; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .footer a { color: inherit; text-decoration: none; transition: opacity 0.25s ease; }
         .footer a:hover { opacity: .5; }
-        
         .nav { display: flex; flex-direction: column; gap: 18px; }
         .nav a { font: 700 28px 'Inter'; }
-        
-        .f-right { max-width: 420px; margin-left: auto; text-align: right; display: flex; flex-direction: column; justify-content: space-between; }
+        .f-right { max-width: 420px; margin-left: auto; text-align: right; }
         .f-info h2 { font-size: 20px; margin-bottom: 18px; }
         .f-info p { font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
-        
         .f-social { display: flex; justify-content: flex-end; gap: 28px; margin-top: 30px; }
         .f-social a { font-size: 34px; padding: 12px; }
 
-        /* Mobile Adjustments */
         @media(max-width: 768px) {
-            .page-wrapper {
-                margin-top: calc(60px); /* Shifted up for mobile */
-            }
-            .logo-container { width: 90%; margin: 40px auto; }
-            .footer-inner { grid-template-columns: 1fr; gap: 60px; padding: 0 20px; }
+            .footer-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
             .map-container { aspect-ratio: 4 / 3; }
@@ -113,26 +61,24 @@
         </div>
     </header>
 
-    <main class="page-wrapper">
-        <a href="/" class="logo-container">
-            <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
-            <img src="/images/logo-secondary-location.webp" alt="Acai Life Location Detail" class="logo-secondary" loading="lazy">
-        </a>
-        
-       <div class="map-container">
-  <iframe 
-    class="map" 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783243017038!5m2!1sen!2smy" 
-    width="600" 
-    height="450" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade"
-    title="Acai Life Location Map">
-  </iframe>
-</div>
-    </main>
+<main class="page-wrapper">
+    <a href="/" class="logo-container">
+        <img src="/images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
+        <img src="/images/logo-secondary-location.webp" alt="Location" class="logo-secondary">
+    </a>
+    <div class="map-container">
+        <!-- Integrated the URL here -->
+        <iframe 
+            class="map" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783244881077!5m2!1sen!2smy" 
+            allowfullscreen="" 
+            loading="lazy" 
+            title="Location Map"
+            style="border:0;"
+            referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+    </div>
+</main>
 
     <footer class="footer">
         <div class="footer-inner">
@@ -146,16 +92,16 @@
             <div class="f-right">
                 <div class="f-info">
                     <a href="/"><h2>ACAI LIFE - ACAI BOWLS & FROZEN YOGURT</h2></a>
-                    <p>05 AN THƯỢNG 6, BẮC Mỹ PHÚ,<br>NGŨ HÀNH SƠN, ĐÀ NẴNG 550000, VIETNAM</p>
+                    <p>05 AN THƯỢNG 6, BẮC MỸ PHÚ,<br>NGŨ HÀNH SƠN, ĐÀ NẴNG 550000, VIETNAM</p>
                     <p>MON-SUN: 10:00 - 22:00</p>
                     <p><a href="tel:+84394303001">+84 394 303 001</a><br>
                     <a href="mailto:acailife.vn@gmail.com">ACAILIFE.VN@GMAIL.COM</a></p>
                 </div>
                 <div class="f-social">
-                    <a href="https://www.facebook.com/acailifevn" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/acailife.vn" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@acailife.vn" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#" target="_blank" aria-label="Location Map"><i class="fa-solid fa-location-dot"></i></a>
+                    <a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@acailife.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
                 </div>
             </div>
         </div>
@@ -167,4 +113,4 @@
         track.innerHTML += content + content;
     </script>
 </body>
-</html>  
+</html>
