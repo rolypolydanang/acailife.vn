@@ -24,7 +24,7 @@
             font-family: 'Inter', Arial, sans-serif; 
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensures body takes full screen height */
+            min-height: 100vh;
         }
 
         /* 1. TICKER */
@@ -37,7 +37,7 @@
         .page-wrapper { 
             display: flex; 
             flex-direction: column; 
-            flex-grow: 1; /* Makes the main section fill available space */
+            flex-grow: 1; 
             width: 100%;
         }
         .logo-container { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 40px 0; width: 80vw; max-width: 800px; text-decoration: none; margin: 0 auto; flex-shrink: 0; }
@@ -46,9 +46,18 @@
         
         .map-container { 
             width: 100%; 
-            flex-grow: 1; /* Forces the map to fill the remaining space */
-            min-height: 300px; /* Ensures it doesn't collapse too much */
+            flex-grow: 1; 
+            min-height: 400px; 
         }
+
+        /* Desktop height adjustment */
+        @media(min-width: 768px) {
+            .map-container {
+                height: 800px; 
+                flex-grow: 0;
+            }
+        }
+
         .map { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.9); display: block; }
 
         /* 3. UNIFIED FOOTER */
@@ -87,7 +96,8 @@
         <div class="map-container">
             <iframe 
                 class="map" 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783244881077!5m2!1sen!2smy"                allowfullscreen="" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783244881077!5m2!1sen!2smy" 
+                allowfullscreen="" 
                 loading="lazy" 
                 title="Location Map"
                 style="border:0;"
