@@ -13,38 +13,36 @@
         :root { --bg: #111111; --text: #ffffff; --accent: #f5f1ea; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html, body { height: 100%; margin: 0; overflow-x: hidden; }
+        /* FIX: Use dvh (dynamic viewport height) for better mobile support */
+        html, body { 
+            margin: 0; 
+            min-height: 100dvh; 
+            background: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        
         body { 
-            background: var(--bg); color: var(--text); 
-            font-family: 'Inter', Arial, sans-serif; 
-            display: flex; flex-direction: column; min-height: 100vh;
+            display: flex; 
+            flex-direction: column; 
         }
 
         /* 1. TICKER */
-        .ticker { position: relative; height: 60px; flex-shrink: 0; background: #000; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; z-index: 1000; }
+        .ticker { height: 60px; flex-shrink: 0; background: #000; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; }
         .track { display: flex; white-space: nowrap; animation: scroll 20s linear infinite; }
         .track span { padding-right: 80px; font-weight: 700; font-size: 24px; text-transform: uppercase; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* 2. MAIN CONTENT */
-        .page-wrapper { display: flex; flex-direction: column; flex-grow: 1; width: 100%; }
-        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 40px 0; width: 90vw; max-width: 800px; text-decoration: none; margin: 0 auto; flex-shrink: 0; }
+        /* 2. MAIN CONTENT - Allow to grow */
+        .page-wrapper { display: flex; flex-direction: column; flex: 1 0 auto; width: 100%; }
+        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 40px 0; width: 90vw; max-width: 800px; text-decoration: none; margin: 0 auto; }
         
-        /* Both logos now have a max-width constraint */
-        .logo-main { 
-            width: 100%; 
-            max-width: 500px; /* Adjust this to your desired cap */
-            display: block; 
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); 
-        }
-        .logo-secondary { 
-            width: 100%; 
-            max-width: 300px; /* Adjust this to your desired cap */
-            display: block; 
-        }
+        .logo-main { width: 100%; max-width: 500px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
+        .logo-secondary { width: 100%; max-width: 300px; display: block; }
         
-        .map-container { width: 100%; flex-grow: 1; min-height: 400px; }
-        @media(min-width: 575px) { .map-container { height: 575px; flex-grow: 0; } }
+        /* FIX: Use min-height for map on mobile, fixed height only on desktop */
+        .map-container { width: 100%; height: 400px; }
+        @media(min-width: 575px) { .map-container { height: 575px; } }
         .map { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.9); display: block; }
 
         /* 3. UNIFIED FOOTER */
@@ -83,7 +81,7 @@
             <img src="/images/logo-secondary-location.webp" alt="Location" class="logo-secondary">
         </a>
         <div class="map-container">
-            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783244881077!5m2!1sen!2smy" allowfullscreen="" loading="lazy" title="Location Map" style="border:0;" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783250058634!5m2!1sen!2smy" allowfullscreen="" loading="lazy" title="Location Map"></iframe>
         </div>
     </main>
 
@@ -105,10 +103,9 @@
                     <a href="mailto:acailife.vn@gmail.com">ACAILIFE.VN@GMAIL.COM</a></p>
                 </div>
                 <div class="f-social">
-                    <a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@acailife.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                    <a href="https://www.facebook.com/acailifevn" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/acailife.vn" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@acailife.vn" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
