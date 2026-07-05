@@ -21,7 +21,10 @@
             font-family: 'Inter', Arial, sans-serif;
         }
         
-        body { display: flex; flex-direction: column; }
+        body { 
+            display: flex; 
+            flex-direction: column; 
+        }
 
         /* 1. TICKER */
         .ticker { height: 60px; flex-shrink: 0; background: #000; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; }
@@ -31,11 +34,11 @@
 
         /* 2. MAIN CONTENT */
         .page-wrapper { display: flex; flex-direction: column; flex: 1 0 auto; width: 100%; }
-        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 25px; padding: 40px 0; width: 90vw; max-width: 800px; text-decoration: none; margin: 0 auto; }
+        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 40px 0; width: 90vw; max-width: 800px; text-decoration: none; margin: 0 auto; }
         
-        /* Logos updated to use percentage for mobile scaling + max-width for desktop */
-        .logo-main { width: 85%; max-width: 425px; height: auto; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
-        .logo-secondary { width: 50%; max-width: 255px; height: auto; display: block; }
+        /* Reduced by 15% */
+        .logo-main { width: 100%; max-width: 425px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
+        .logo-secondary { width: 100%; max-width: 255px; display: block; }
         
         .map-container { width: 100%; height: 400px; }
         @media(min-width: 575px) { .map-container { height: 575px; } }
