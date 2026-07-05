@@ -13,7 +13,6 @@
         :root { --bg: #111111; --text: #ffffff; --accent: #f5f1ea; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* FIX: Use dvh (dynamic viewport height) for better mobile support */
         html, body { 
             margin: 0; 
             min-height: 100dvh; 
@@ -33,14 +32,14 @@
         .track span { padding-right: 80px; font-weight: 700; font-size: 24px; text-transform: uppercase; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* 2. MAIN CONTENT - Allow to grow */
+        /* 2. MAIN CONTENT */
         .page-wrapper { display: flex; flex-direction: column; flex: 1 0 auto; width: 100%; }
         .logo-container { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 40px 0; width: 90vw; max-width: 800px; text-decoration: none; margin: 0 auto; }
         
-        .logo-main { width: 100%; max-width: 500px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
-        .logo-secondary { width: 100%; max-width: 300px; display: block; }
+        /* Reduced by 15% */
+        .logo-main { width: 100%; max-width: 425px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
+        .logo-secondary { width: 100%; max-width: 255px; display: block; }
         
-        /* FIX: Use min-height for map on mobile, fixed height only on desktop */
         .map-container { width: 100%; height: 400px; }
         @media(min-width: 575px) { .map-container { height: 575px; } }
         .map { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.9); display: block; }
