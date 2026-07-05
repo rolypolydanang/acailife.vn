@@ -13,18 +13,11 @@
         :root { --bg: #111111; --text: #ffffff; --accent: #f5f1ea; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html, body { 
-            height: 100%; 
-            margin: 0;
-            overflow-x: hidden;
-        }
-
+        html, body { height: 100%; margin: 0; overflow-x: hidden; }
         body { 
             background: var(--bg); color: var(--text); 
             font-family: 'Inter', Arial, sans-serif; 
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            display: flex; flex-direction: column; min-height: 100vh;
         }
 
         /* 1. TICKER */
@@ -34,30 +27,13 @@
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
         /* 2. MAIN CONTENT */
-        .page-wrapper { 
-            display: flex; 
-            flex-direction: column; 
-            flex-grow: 1; 
-            width: 100%;
-        }
+        .page-wrapper { display: flex; flex-direction: column; flex-grow: 1; width: 100%; }
         .logo-container { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 40px 0; width: 80vw; max-width: 800px; text-decoration: none; margin: 0 auto; flex-shrink: 0; }
         .logo-main { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 300px; width: 100%; display: block; }
         
-        .map-container { 
-            width: 100%; 
-            flex-grow: 1; 
-            min-height: 400px; 
-        }
-
-        /* Desktop height adjustment */
-        @media(min-width: 575px) {
-            .map-container {
-                height: 575px; 
-                flex-grow: 0;
-            }
-        }
-
+        .map-container { width: 100%; flex-grow: 1; min-height: 400px; }
+        @media(min-width: 575px) { .map-container { height: 575px; flex-grow: 0; } }
         .map { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.9); display: block; }
 
         /* 3. UNIFIED FOOTER */
@@ -65,8 +41,11 @@
         .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .footer a { color: inherit; text-decoration: none; transition: opacity 0.25s ease; }
         .footer a:hover { opacity: .5; }
-        .nav { display: flex; flex-direction: column; gap: 18px; }
-        .nav a { font: 700 28px 'Inter'; }
+        
+        /* Updated Navigation: Gap set to 0 and padding adjusted */
+        .nav { display: flex; flex-direction: column; gap: 0; }
+        .nav a { font: 700 28px 'Inter'; display: block; padding: 5px 0; }
+        
         .f-right { max-width: 420px; margin-left: auto; text-align: right; }
         .f-info h2 { font-size: 20px; margin-bottom: 18px; }
         .f-info p { font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
@@ -94,15 +73,7 @@
             <img src="/images/logo-secondary-location.webp" alt="Location" class="logo-secondary">
         </a>
         <div class="map-container">
-            <iframe 
-                class="map" 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783244881077!5m2!1sen!2smy" 
-                allowfullscreen="" 
-                loading="lazy" 
-                title="Location Map"
-                style="border:0;"
-                referrerpolicy="strict-origin-when-cross-origin">
-            </iframe>
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320204336659!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783244881077!5m2!1sen!2smy" allowfullscreen="" loading="lazy" title="Location Map" style="border:0;" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </main>
 
@@ -127,7 +98,7 @@
                     <a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.tiktok.com/@acailife.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
                 </div>
             </div>
         </div>
