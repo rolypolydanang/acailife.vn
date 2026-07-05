@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     
     <style>
-        :root { --bg: #111111; --text: #ffffff; --accent: #f5f1ea; }
+        :root { --bg: #111111; --text: #f5f1ea; --accent: #f5f1ea; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html, body { min-height: 100dvh; background: var(--bg); color: var(--text); font-family: 'Inter', Arial, sans-serif; }
         body { display: flex; flex-direction: column; }
 
         /* 1. TICKER */
-        .ticker { height: 60px; flex-shrink: 0; background: #000; border-bottom: 1px solid #fff; display: flex; align-items: center; overflow: hidden; }
+        .ticker { height: 60px; flex-shrink: 0; background: #000; border-bottom: 1px solid var(--accent); display: flex; align-items: center; overflow: hidden; }
         .track { display: flex; white-space: nowrap; animation: scroll 20s linear infinite; will-change: transform; }
         .track span { padding-right: 80px; font-weight: 700; font-size: 24px; text-transform: uppercase; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
