@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Location | Acai Life</title>
     
-    <link rel="canonical" href="https://acailife.vn/location.html">
-    <meta name="description" content="Find Acai Life in Da Nang. Visit us for authentic Açaí bowls, frozen yogurt, and healthy treats. Located in An Thượng, Ngũ Hành Sơn.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
 
+    <!-- Fonts and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -20,6 +21,9 @@
             --accent: #f5f1ea;
         }
 
+        /* 1. Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
@@ -27,9 +31,17 @@
             color: var(--text);
             font-family: 'Inter', Arial, sans-serif;
             overflow-x: hidden;
+            /* 3. Fade-in Entrance */
+            animation: fadeIn 0.8s ease-in;
         }
 
-        /* 1. TICKER */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* 4. Ticker Robustness */
+        @media (prefers-reduced-motion: reduce) {
+            .track { animation: none !important; }
+        }
+
         .ticker { 
             position: fixed; top: 0; left: 0; width: 100%; height: 60px; 
             background: #000; border-bottom: 1px solid #fff; 
@@ -42,9 +54,8 @@
         .track span { padding-right: 80px; font-weight: 700; font-size: 24px; text-transform: uppercase; }
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* 2. CONTENT */
-        /* Shifted logo down by 3vh relative to the ticker */
-        .page-wrapper { margin-top: calc(60px + 3vh); padding-top: 1vh; width: 100%; }
+        /* 2. Content & Map */
+        .page-wrapper { margin-top: 60px; padding-top: 1vh; width: 100%; }
         
         .logo-container { 
             display: flex; flex-direction: column; align-items: center; 
@@ -55,13 +66,15 @@
         .logo-main { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { max-width: 300px; width: 100%; display: block; }
 
-        .map-container { width: 100%; aspect-ratio: 16 / 9; max-height: 564px; }
+        .map-container { 
+            width: 100%; aspect-ratio: 16 / 9; max-height: 564px; pointer-events: auto; 
+        }
         .map { 
             width: 100%; height: 100%; border: none; 
             filter: grayscale(1) invert(0.9); display: block; 
         }
 
-        /* 3. FOOTER */
+        /* Footer */
         .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .footer a { color: inherit; text-decoration: none; transition: opacity 0.25s ease; }
@@ -85,31 +98,6 @@
             .map-container { aspect-ratio: 4 / 3; }
         }
     </style>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "Acai Life",
-      "image": "https://acailife.vn/images/acai-life-logo-hero.webp",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "05 An Thượng 6, Bắc Mỹ Phú",
-        "addressLocality": "Ngũ Hành Sơn",
-        "addressRegion": "Đà Nẵng",
-        "postalCode": "550000",
-        "addressCountry": "VN"
-      },
-      "geo": { "@type": "GeoCoordinates", "latitude": 16.0488, "longitude": 108.2425 },
-      "url": "https://acailife.vn/",
-      "telephone": "+84394303001",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "10:00", "closes": "22:00"
-      }
-    }
-    </script>
 </head>
 <body>
 
@@ -122,13 +110,16 @@
     <main class="page-wrapper">
         <a href="/" class="logo-container">
             <img src="images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
-            <img src="/images/logo-secondary-location.webp" alt="Acai Life Location Detail" class="logo-secondary">
+            <img src="/images/logo-secondary-location.webp" alt="Acai Life Location Detail" class="logo-secondary" loading="lazy">
         </a>
         
         <div class="map-container">
             <iframe class="map" 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7668.640408673318!2d108.24251867646417!3d16.0488652399801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783067883821!5m2!1sen!2smy" 
-                    allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.320303287518!2d108.24509359999999!3d16.048860100000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421745ba6fd893%3A0x433f0e01c6182429!2sAcai%20Life%20-%20Acai%20Bowls%20%26%20Frozen%20Yogurt!5e0!3m2!1sen!2smy!4v1783241106342!5m2!1sen!2smy" 
+                    title="Acai Life Location Map"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
     </main>
