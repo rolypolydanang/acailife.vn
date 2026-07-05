@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Acai Life | Authentic Açaí & Healthy Treats</title>
-     
+    
     <meta name="description" content="Acai Life Da Nang: Serving authentic Açaí bowls, frozen yogurt, and healthy treats in An Thượng, Ngũ Hành Sơn. Open daily 10am-10pm.">
-  
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -26,6 +26,7 @@
             color: var(--text);
             font-family: 'Inter', Arial, sans-serif;
             overflow-x: hidden;
+            padding-top: 60px;
         }
 
         /* 1. FIXED TICKER */
@@ -36,14 +37,19 @@
         }
         .track { display: flex; white-space: nowrap; animation: scroll 20s linear infinite; }
         .track span { padding-right: 80px; font-weight: 700; font-size: 24px; text-transform: uppercase; }
+        
+        .ticker:hover .track { animation-play-state: paused; }
+
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-        /* 2. HERO SECTION - Fixed for Mobile */
-        .spacer { height: 60px; }
+        @media (prefers-reduced-motion: reduce) {
+            .track { animation: none; }
+        }
+
+        /* 2. HERO SECTION */
         .hero { 
             width: 100%; 
-            height: 100vh;      /* Fallback for older browsers */
-            height: 100svh;     /* Perfect fit for mobile */
+            height: 100svh; 
             position: relative; 
             overflow: hidden;
         }
@@ -55,53 +61,67 @@
         .logo-container { 
             position: absolute; top: 40px; left: 50%; transform: translateX(-50%); 
             z-index: 50; width: 80vw; max-width: 800px; 
+            transition: transform 0.3s ease;
         }
+        .logo-container:hover { transform: translateX(-50%) scale(1.05); }
         .logo-container img { width: 100%; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
 
         /* 3. FOOTER */
         .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; }
         .footer-inner { max-width: 1200px; margin: auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        
+        /* Links and Hovers */
+        .footer a { color: inherit; text-decoration: none; transition: opacity 0.25s ease; }
+        .footer a:hover { opacity: .5; }
+        
         .nav { display: flex; flex-direction: column; gap: 18px; }
-        .footer a { color: inherit; text-decoration: none; }
-        .nav a { font: 700 28px 'Inter'; }
-        .nav a:hover { opacity: .5; }
+        .nav a { font: 700 28px 'Inter'; display: inline-block; padding: 10px 0; }
+        
         .f-right { max-width: 420px; margin-left: auto; text-align: right; display: flex; flex-direction: column; justify-content: space-between; }
-        .f-info h2 { font-size: 20px; margin-bottom: 18px; }
+        .f-info h2 { font-size: 20px; margin-bottom: 18px; display: inline-block; }
         .f-info p { font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
+        
         .f-social { display: flex; justify-content: flex-end; gap: 28px; margin-top: 30px; }
-        .f-social a { font-size: 34px; transition: 0.25s; }
-        .f-social a:hover { transform: translateY(-3px); opacity: .5; }
+        .f-social a { font-size: 34px; padding: 10px; }
+
+        /* Accessibility: Focus States */
+        a:focus-visible { outline: 2px solid #000; outline-offset: 4px; }
 
         @media(max-width: 768px) {
             .logo-container { width: 90%; max-width: 350px; top: 30px; }
             .footer-inner { grid-template-columns: 1fr; gap: 60px; padding: 0 20px; }
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
+            .nav a { padding: 15px 0; }
         }
     </style>
 </head>
 <body>
 
-    <div class="ticker" aria-hidden="true">
+    <header class="ticker" aria-hidden="true">
         <div class="track">
             <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
             <span>AUTHENTIC AÇAÍ</span><span>FROZEN YOGURT</span><span>PREMIUM TOPPINGS</span><span>ENERGISING SMOOTHIES</span><span>SPECIALTY COFFEE</span>
         </div>
-    </div>
+    </header>
 
-    <div class="spacer"></div>
-
-    <section class="hero">
-        <a href="/" class="logo-container">
-            <img src="/images/acai-life-logo-hero.webp" alt="Acai Life Logo">
-        </a>
-        <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="Fresh acai bowl" fetchpriority="high">
-    </section>
+    <main>
+        <section class="hero">
+            <a href="/" class="logo-container" aria-label="Home">
+                <img src="/images/acai-life-logo-hero.webp" alt="Acai Life Logo">
+            </a>
+            <img src="/images/acai-life-index-image.webp" class="hero-bg" alt="Fresh acai bowl" fetchpriority="high" loading="eager">
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="footer-inner">
             <nav class="nav">
-                <a href="#">MENU</a><a href="location.html">LOCATION</a><a href="about.html">ABOUT</a><a href="#">WHOLESALE</a><a href="#">BLOG</a>
+                <a href="#">MENU</a>
+                <a href="location.html">LOCATION</a>
+                <a href="about.html">ABOUT</a>
+                <a href="#">WHOLESALE</a>
+                <a href="#">BLOG</a>
             </nav>
             <div class="f-right">
                 <div class="f-info">
@@ -112,10 +132,10 @@
                     <a href="mailto:acailife.vn@gmail.com">ACAILIFE.VN@GMAIL.COM</a></p>
                 </div>
                 <div class="f-social">
-                    <a href="https://www.facebook.com/acailifevn" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/acailife.vn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.tiktok.com/@acailife.vn" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank"><i class="fa-solid fa-location-dot"></i></a>
+                    <a href="https://www.facebook.com/acailifevn" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/acailife.vn" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@acailife.vn" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://maps.app.goo.gl/8EcqxysxVB3U9FvW9" target="_blank" aria-label="Location Map"><i class="fa-solid fa-location-dot"></i></a>
                 </div>
             </div>
         </div>
