@@ -93,16 +93,28 @@
         .f-social a { font-size: 34px; padding: 12px; }
 
         /* Mobile Adjustments */
-        @media(max-width: 768px) {
-            .page-wrapper {
-                margin-top: calc(60px); /* Shifted up for mobile */
-            }
-            .logo-container { width: 90%; margin: 40px auto; }
-            .footer-inner { grid-template-columns: 1fr; gap: 60px; padding: 0 20px; }
-            .f-right { text-align: left; margin: 0; }
-            .f-social { justify-content: flex-start; }
-            .map-container { aspect-ratio: 4 / 3; }
-        }
+@media(max-width: 768px) {
+    .page-wrapper {
+        margin-top: 60px;
+        /* Ensure the main container doesn't have extra bottom padding pushing the map */
+        padding-bottom: 0; 
+    }
+    
+    .logo-container { width: 90%; margin: 40px auto; }
+    
+    .map-container { 
+        /* Reset aspect ratio for mobile */
+        aspect-ratio: auto; 
+        /* Calculate height: 100vh minus the top header (60px) and minus the logo area height */
+        /* If the logo/margin takes up roughly 200px, adjust accordingly: */
+        height: calc(100vh - 60px - 200px); 
+        min-height: 300px; /* Optional: ensures it doesn't get too squished */
+    }
+
+    .footer-inner { grid-template-columns: 1fr; gap: 60px; padding: 0 20px; }
+    .f-right { text-align: left; margin: 0; }
+    .f-social { justify-content: flex-start; }
+}
     </style>
 </head>
 <body>
