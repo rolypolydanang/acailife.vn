@@ -52,8 +52,9 @@
         @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
         /* 2. Content & Map */
+        /* Desktop Default */
         .page-wrapper { 
-            margin-top: calc(60px + 3vh); /* Adjusted per your request */
+            margin-top: calc(60px + 4vh); 
             padding-top: 1vh; 
             width: 100%; 
         }
@@ -91,7 +92,11 @@
         .f-social { display: flex; justify-content: flex-end; gap: 28px; margin-top: 30px; }
         .f-social a { font-size: 34px; padding: 12px; }
 
+        /* Mobile Adjustments */
         @media(max-width: 768px) {
+            .page-wrapper {
+                margin-top: calc(60px + 1vh); /* Shifted up for mobile */
+            }
             .logo-container { width: 90%; margin: 40px auto; }
             .footer-inner { grid-template-columns: 1fr; gap: 60px; padding: 0 20px; }
             .f-right { text-align: left; margin: 0; }
@@ -116,7 +121,7 @@
         
         <div class="map-container">
             <iframe class="map" 
-                    src="https://www.google.com/maps/embed?pb=..." 
+                    src="https://www.google.com/maps/embed?pb=" 
                     title="Acai Life Location Map"
                     allowfullscreen="" 
                     loading="lazy" 
