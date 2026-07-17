@@ -20,7 +20,7 @@
         :root { --bg: #7C5697; --text: #ffffff; --accent: #f5f1ea; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html, body { min-height: 100dvh; background: var(--bg); color: var(--text); font-family: 'Inter', Arial, sans-serif; }
+        html, body { min-height: 100dvh; background: var(--bg); color: var(--text); font-family: 'Inter', Arial, sans-serif; overflow-x: hidden; }
         body { display: flex; flex-direction: column; }
 
         /* 1. TICKER */
@@ -35,8 +35,8 @@
         .logo-main { width: 100%; max-width: 425px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { width: 100%; max-width: 255px; display: block; }
         
-        .menu-image-container { width: 90%; max-width: 1250px; margin: 40px auto; }
-        .menu-image { width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,.3); }
+        .menu-image-container { width: 100%; max-width: 1250px; margin: 40px auto; }
+        .menu-image { width: 100%; height: auto; display: block; box-shadow: 0 20px 40px rgba(0,0,0,.3); }
 
         /* 3. FOOTER */
         .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; width: 100%; flex-shrink: 0; }
@@ -62,6 +62,10 @@
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
             .nav { gap: 16px; }
+            
+            /* Mobile Full-Bleed */
+            .menu-image-container { margin: 20px 0; }
+            .menu-image { border-radius: 0; }
         }
     </style>
 </head>
@@ -115,7 +119,7 @@
     <script>
         const track = document.getElementById('ticker-track');
         const content = track.innerHTML;
-        track.innerHTML += content + content;
+        track.innerHTML += content + content + content;
     </script>
 </body>
 </html>
