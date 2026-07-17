@@ -13,7 +13,7 @@
         :root { --bg: #111111; --text: #f5f1ea; --accent: #f5f1ea; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html, body { min-height: 100dvh; background: var(--bg); color: var(--text); font-family: 'Inter', Arial, sans-serif; overflow-x: hidden; }
+        html, body { min-height: 100%; background: var(--bg); color: var(--text); font-family: 'Inter', Arial, sans-serif; overflow-x: hidden; }
         body { display: flex; flex-direction: column; }
 
         /* 1. TICKER */
@@ -27,12 +27,16 @@
         .logo-main { width: 100%; max-width: 425px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { width: 100%; max-width: 255px; display: block; }
 
-        /* 3. FULL WIDTH PDF */
-        .page-wrapper { flex: 1; width: 100%; display: flex; }
-        .pdf-viewer { width: 100vw; flex-grow: 1; border: none; display: block; }
+        /* 3. PDF VIEWER - No internal scrolling */
+        .pdf-viewer { 
+            width: 100%; 
+            height: 1200px; /* Adjust this height to match your PDF's length */
+            border: none; 
+            display: block; 
+        }
 
         /* 4. FOOTER */
-        .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; width: 100%; flex-shrink: 0; }
+        .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; width: 100%; }
         .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .footer a { color: inherit; text-decoration: none; transition: opacity 0.25s ease; cursor: pointer; }
         .footer a:hover { opacity: .5; }
@@ -66,22 +70,17 @@
         </div>
     </header>
 
-    <!-- Logo is now outside the PDF section so it doesn't constrain width -->
     <a href="/" class="logo-container">
         <img src="/images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
         <img src="/images/logo-secondary-about.webp" alt="Menu" class="logo-secondary">
     </a>
     
-    <main class="page-wrapper">
-        <iframe 
-            class="pdf-viewer"
-            src="images/acai-life-menu.pdf" 
-            title="Acai Life Menu">
-            <p>It appears your browser doesn't support PDFs. 
-               <a href="images/acai-life-menu.pdf" target="_blank">Click here to download our full menu.</a>
-            </p>
-        </iframe>
-    </main>
+    <!-- No wrapper needed, the footer will naturally sit below this -->
+    <iframe 
+        class="pdf-viewer"
+        src="images/acai-life-menu.pdf" 
+        title="Acai Life Menu">
+    </iframe>
 
     <footer class="footer">
         <div class="footer-inner">
