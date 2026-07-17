@@ -27,17 +27,18 @@
         .logo-main { width: 100%; max-width: 425px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { width: 100%; max-width: 255px; display: block; }
 
-        /* 3. PDF VIEWER - Updated for Full Mobile Width */
-        .pdf-viewer { 
+        /* 3. MENU IMAGE - Full width */
+        .menu-image { 
             width: 100vw;
-            height: 1200px; /* Adjust based on your PDF length */
-            border: none; 
+            height: auto;
             display: block;
             margin: 0 auto;
+            /* Prevents vertical scroll gaps */
+            vertical-align: top;
         }
 
         /* 4. FOOTER */
-        .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; width: 100%; }
+        .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; width: 100%; margin-top: auto; }
         .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .footer a { color: inherit; text-decoration: none; transition: opacity 0.25s ease; cursor: pointer; }
         .footer a:hover { opacity: .5; }
@@ -73,14 +74,11 @@
 
     <a href="/" class="logo-container">
         <img src="/images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
-        <img src="/images/logo-secondary-menu.webp" alt="Menu" class="logo-secondary">
+        <img src="/images/logo-secondary-about.webp" alt="Menu" class="logo-secondary">
     </a>
     
-    <iframe 
-        class="pdf-viewer"
-        src="images/acai-life-menu.pdf" 
-        title="Acai Life Menu">
-    </iframe>
+    <!-- Replaced PDF with WebP image -->
+    <img src="images/acai-life-menu.webp" alt="Acai Life Menu" class="menu-image" loading="lazy">
 
     <footer class="footer">
         <div class="footer-inner">
