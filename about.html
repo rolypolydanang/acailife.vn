@@ -31,7 +31,7 @@
 
         /* 2. MAIN CONTENT */
         .page-wrapper { display: flex; flex-direction: column; flex: 1 0 auto; width: 100%; }
-        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 15px; padding: 20px 0; width: 90vw; max-width: 800px; text-decoration: none; margin: 0 auto; }
+        .logo-container { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 20px 0; width: 90vw; max-width: 800px; text-decoration: none; margin: 0 auto; }
         .logo-main { width: 100%; max-width: 425px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { width: 100%; max-width: 255px; display: block; }
         
@@ -81,6 +81,7 @@
    <main class="page-wrapper">
     <a href="/" class="logo-container">
         <img src="/images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
+        <img src="/images/logo-secondary-about.webp" alt="About" class="logo-secondary">
     </a>
 
     <article class="content-container">
@@ -88,7 +89,7 @@
         <p><strong>ACAI LIFE</strong> was born on Da Nang’s beachside in 2026 with a simple mission: to bring premium acai bowls to the water's edge. It was here that our signature acai swirls met our creamy frozen yogurt soft serve—a pairing that defined our menu and our identity. As a proud, family-owned Vietnamese business, we are scaling our vision: supplying premium acai products to professional wholesale partners who refuse to compromise on quality.</p>
 
         <h3>THE BRAZILIAN STANDARD</h3>
-        <p>We believe authentic acai starts at the source. That is why we import <strong>100% premium Brazilian acai</strong> directly, bypassing industry shortcuts. We never use powders,  fillers or artificial bases. Every bowl we serve delivers the deep flavor, velvety texture, and rich nutritional profile that have made Brazilian acai a global icon.</p>
+        <p>We believe authentic acai starts at the source. That is why we import <strong>100% premium Brazilian acai</strong> directly, bypassing industry shortcuts. We never use powders, fillers or artificial bases. Every bowl we serve delivers the deep flavor, velvety texture, and rich nutritional profile that have made Brazilian acai a global icon.</p>
 
         <h3>WHY WE’RE DIFFERENT</h3>
         <ul>
@@ -97,6 +98,8 @@
             <li><strong>Hyper-Local Freshness:</strong> We pair our high-grade import with the best of Vietnam’s seasonal harvest—sourcing premium mango, dragonfruit, and premium nuts and superfoods for a bowl that is as fresh as it is authentic.</li>
             <li><strong>Pure, Clean Energy:</strong> Every bowl is designed to fuel your life without compromise. Whether you’re looking for a post-workout recovery, a clean breakfast, full meal or a nutritious dessert, you get lasting energy in every bite.</li>
         </ul>
+        
+     
     </article>
 </main>
 
@@ -130,9 +133,11 @@
     </footer>
 
     <script>
-        const track = document.getElementById('ticker-track');
-        const content = track.innerHTML;
-        track.innerHTML += content + content;
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.getElementById('ticker-track');
+            const content = track.innerHTML;
+            track.innerHTML += content + content;
+        });
     </script>
 </body>
 </html>
