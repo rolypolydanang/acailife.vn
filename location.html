@@ -35,9 +35,13 @@
         .logo-main { width: 100%; max-width: 425px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { width: 100%; max-width: 255px; display: block; }
         
-        .map-container { width: 100%; height: 400px; }
+        .map-container { width: 100%; height: 400px; position: relative; }
         @media(min-width: 575px) { .map-container { height: 575px; } }
-        .map { width: 100%; height: 100%; border: none; filter: grayscale(1) invert(0.9); display: block; }
+        .map { 
+            width: 100%; height: 100%; border: none; display: block;
+            /* Professional, muted aesthetic matching your brand palette */
+            filter: grayscale(0.8) sepia(0.2) hue-rotate(220deg) brightness(1.1) contrast(0.9);
+        }
 
         /* 3. FOOTER */
         .footer { background-color: var(--accent); color: #111111; padding: 100px 0; text-transform: uppercase; letter-spacing: 1px; width: 100%; flex-shrink: 0; }
