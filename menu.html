@@ -27,12 +27,13 @@
         .logo-main { width: 100%; max-width: 425px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { width: 100%; max-width: 255px; display: block; }
 
-        /* 3. PDF VIEWER - No internal scrolling */
+        /* 3. PDF VIEWER - Updated for Full Mobile Width */
         .pdf-viewer { 
-            width: 100%; 
-            height: 1200px; /* Adjust this height to match your PDF's length */
+            width: 100vw;
+            height: 1200px; /* Adjust based on your PDF length */
             border: none; 
-            display: block; 
+            display: block;
+            margin: 0 auto;
         }
 
         /* 4. FOOTER */
@@ -72,10 +73,9 @@
 
     <a href="/" class="logo-container">
         <img src="/images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
-        <img src="/images/logo-secondary-about.webp" alt="Menu" class="logo-secondary">
+        <img src="/images/logo-secondary-menu.webp" alt="Menu" class="logo-secondary">
     </a>
     
-    <!-- No wrapper needed, the footer will naturally sit below this -->
     <iframe 
         class="pdf-viewer"
         src="images/acai-life-menu.pdf" 
