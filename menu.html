@@ -10,13 +10,12 @@
     <link rel="canonical" href="https://www.acailife.vn/menu">
     
     <!-- Favicon & Assets -->
-<!-- Favicon & Assets -->
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Acai Life" />
-<link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Acai Life" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,7 +41,8 @@
         .logo-main { width: 100%; max-width: 425px; display: block; filter: drop-shadow(0 20px 40px rgba(0,0,0,.35)); }
         .logo-secondary { width: 100%; max-width: 255px; display: block; }
         
-        .menu-image-container { width: 100%; max-width: 1250px; margin: 40px auto; }
+        .menu-image-container { width: 100%; max-width: 1250px; margin: 40px auto; padding: 0 20px; }
+        .menu-label { text-align: center; font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; letter-spacing: 2px; }
         .menu-image { width: 100%; height: auto; display: block; box-shadow: 0 20px 40px rgba(0,0,0,.3); }
 
         /* 3. FOOTER */
@@ -69,8 +69,6 @@
             .f-right { text-align: left; margin: 0; }
             .f-social { justify-content: flex-start; }
             .nav { gap: 16px; }
-            
-            /* Mobile Full-Bleed */
             .menu-image-container { margin: 20px 0; }
             .menu-image { border-radius: 0; }
         }
@@ -89,8 +87,17 @@
             <img src="/images/acai-life-logo-hero.webp" alt="Acai Life Logo" class="logo-main">
             <img src="/images/logo-secondary-menu.webp" alt="Menu" class="logo-secondary">
         </a>
+        
+        <!-- English Menu -->
         <div class="menu-image-container">
-            <img src="/images/acai-life-menu.webp" alt="Acai Life Menu Board" class="menu-image">
+            <div class="menu-label">ENGLISH</div>
+            <img src="/images/acai-life-menu.webp" alt="Acai Life Menu English" class="menu-image">
+        </div>
+
+        <!-- Vietnamese Menu -->
+        <div class="menu-image-container">
+            <div class="menu-label">TIẾNG VIỆT</div>
+            <img src="/images/acai-life-menu-vn.webp" alt="Thực đơn Acai Life" class="menu-image">
         </div>
     </main>
 
